@@ -9,6 +9,7 @@
 
 body {
     background: var(--background);
+    font-family: 'Quicksand', sans-serif;
 }
 
 .nav-bar {
@@ -20,21 +21,67 @@ main {
     justify-content: center;
 }
 
+/* Header Css*/
 .cabecalho {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    height: 112px;
+    padding: 0 64px;
     background-color: var(--primary);
     border-radius: 0 0 16px 16px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.navegacao ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.selecionado {
+    font-size: 20px;
+}
+
+.navegacao ul li a {
+    color: var(--alternativeColor);
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 16px;
 }
 
 .toggle_button {
     display: none;
 }
 
-.logo-text {}
+.offcanvas {
+    height: 236px;
+    border-radius: 0 0 16px 16px;
+    background-color: var(--primary);
+    width: 100% !important;
+}
+
+.offcanvas img {
+    margin: 0 auto;
+}
+
+.offcanvas ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.offcanvas ul li {
+    margin-bottom: 16px;
+}
+
+.offcanvas ul li a {
+    text-decoration: none;
+    color: var(--alternativeColor);
+    font-weight: 700;
+}
 
 .botao-primary {
     background-color: var(--secundary);
@@ -42,6 +89,7 @@ main {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     color: white;
     font-weight: 700;
+    padding: 17px 58px;
     text-decoration: none;
 }
 
@@ -54,6 +102,7 @@ main {
 @media (max-width: 640px) {
     .cabecalho {
         padding: 8px 32px;
+        height: 56px;
     }
 
     .logo {
