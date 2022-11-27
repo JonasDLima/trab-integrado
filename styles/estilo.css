@@ -1,0 +1,83 @@
+:root {
+    --background: #E7DFAE;
+    --textColor: #4B3414;
+    --alternativeColor: #FFF3E3;
+    --primary: #8EA998;
+    --secundary: #C58E4D;
+    --tertiary: #978D4F;
+}
+
+body {
+    background: var(--background);
+}
+
+.nav-bar {
+    background: var(--primary);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--primary);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.toggle_button {
+    display: none;
+}
+
+.logo-text {}
+
+.botao-primary {
+    background-color: var(--secundary);
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.botao-primary:hover {
+    background-color: var(--alternativeColor);
+    border: 1px var(--secundary);
+    color: var(--secundary);
+}
+
+@media (max-width: 640px) {
+    .cabecalho {
+        padding: 8px 32px;
+    }
+
+    .logo {
+        margin-top: 16px;
+        margin-left: 22px;
+    }
+
+    .toggle_button {
+        display: block;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .navegacao {
+        display: none;
+    }
+
+    .cabecalho nav {
+        display: none;
+    }
+
+    .botao-primary {
+        padding: 4.5px 20px;
+    }
+}
