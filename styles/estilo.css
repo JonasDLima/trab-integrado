@@ -210,6 +210,10 @@ b {
     display: none;
 }
 
+/* Cadastro page */
+
+
+/* Cadastro ends */
 @media (max-width: 640px) {
     .mobile-visible {
         display: block;
@@ -306,4 +310,40 @@ b {
         padding: 17px 16px;
         display: block;
     }
+
+    /* Cadastro page */
+    .cadastro-Container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .cadastro-Container h2 {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--textColor);
+        margin-top: 20px;
+    }
+
+    .modal-Cadastro-Container {
+        width: 679px;
+        height: 50px;
+        transform: rotate(-90deg);
+        transform-origin: right top;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+    }
+
+    .modal-Cadastro-Container div {
+        margin: 24px 12px;
+        background-color: black;
+        width: 325px;
+        height: 50px;
+        transform: rotate(90deg);
+        transform-origin: right top;
+    }
+
+    /* Cadastro ends */
 }
