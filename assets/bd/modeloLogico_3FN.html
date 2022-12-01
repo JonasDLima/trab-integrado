@@ -1,0 +1,1286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+        <style>
+      .table {
+        background-color:#F5F5FF;
+        border-left:4px solid gray;
+        border-bottom:4px solid gray;
+        border-top:4px solid gray;
+        border-right:4px solid gray;
+        margin-bottom:3em;
+        margin-left:2em;
+        margin-right:2em;
+        padding:1em;
+      }
+      .tableNameHeading h1 {
+          display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:125%;
+        font-weight:bold;
+      }
+        
+      .tableNameHeading h2 {
+        display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:115%;
+        font-weight:normal;
+      }
+      
+      .tableComment { 
+        background-color:#e4efff; margin-bottom:20px;
+      }
+      
+      .tableDefinition { 
+        padding:2px;
+        border-collapse:collapse;
+        margin-top:1em;
+      }
+
+      .tdTableDefinition {
+        padding-right:10px;
+        vertical-align:top;
+        border-top:1px solid #C0C0C0;
+      }
+
+      .tdLogicalColName {
+        width:20em;
+      }
+      
+      .tdPhysicalColName {
+        width:20em;
+      }
+      
+      .tdDataType {
+        width:10em;
+      }
+
+      .tdPkFlag {
+        width:4em;
+      }
+
+      .tdNullFlag {
+        width:9em;
+      }
+
+      .tdTableHeading {
+        padding:2px;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+        vertical-align:top;
+        border-bottom: 1px solid #C0C0C0;
+        background-color: rgb(240,240,240);
+      }
+      
+      .subTitle {
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      .references {
+      }
+      .comment {
+        color:#666666;
+        margin-left:3em;
+        padding:0.25em;
+      }
+    </style>
+        <title>modeloLogico_SN</title>
+    </head>
+    <body>
+        <center>
+            <h2>modeloLogico_SN</h2>
+        </center>
+        <h3>List of tables</h3>
+        <ul>
+            <li>
+                <a href="#bairros">bairros</a>
+            </li>
+            <li>
+                <a href="#cidadao">cidadao</a>
+            </li>
+            <li>
+                <a href="#cidadao_enderecos">cidadao_enderecos</a>
+            </li>
+            <li>
+                <a href="#cidadao_telefones">cidadao_telefones</a>
+            </li>
+            <li>
+                <a href="#cidades">cidades</a>
+            </li>
+            <li>
+                <a href="#coletas">coletas</a>
+            </li>
+            <li>
+                <a href="#itens_coleta">itens_coleta</a>
+            </li>
+            <li>
+                <a href="#logradouros">logradouros</a>
+            </li>
+            <li>
+                <a href="#organizacao">organizacao</a>
+            </li>
+            <li>
+                <a href="#organizacao_enderecos">organizacao_enderecos</a>
+            </li>
+            <li>
+                <a href="#organizacao_telefones">organizacao_telefones</a>
+            </li>
+            <li>
+                <a href="#paises">paises</a>
+            </li>
+            <li>
+                <a href="#regioes">regioes</a>
+            </li>
+            <li>
+                <a href="#tipos_materiais">tipos_materiais</a>
+            </li>
+            <li>
+                <a href="#unidades_federativas">unidades_federativas</a>
+            </li>
+            <li>
+                <a href="#usuarios">usuarios</a>
+            </li>
+        </ul>
+        <div class="tableNameHeading">
+            <h1>
+                bairros<a name="bairros"></a>
+            </h1>
+            <h2>
+      (Physical Name: bairros)
+      </h2>
+            <p class="comment">Tabela para armazenar os bairros relacionados a determinada cidade</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idBairro (PK)</td><td class="tdTableDefinition">idBairro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">dsBairro</td><td class="tdTableDefinition">dsBairro</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para guardar o nome do bairro</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidade
+                &nbsp;(<a href="#cidades">FK</a>)
+              </td><td class="tdTableDefinition">idCidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#cidades">cidades</a> through (idCidade)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#logradouros">logradouros</a> referencing (idBairro)
+                    </li>
+                    <li>
+                        <a href="#cidadao_enderecos">cidadao_enderecos</a> referencing (idBairro)
+                    </li>
+                    <li>
+                        <a href="#organizacao_enderecos">organizacao_enderecos</a> referencing (idBairro)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                cidadao<a name="cidadao"></a>
+            </h1>
+            <h2>
+      (Physical Name: cidadao)
+      </h2>
+            <p class="comment">Tabela de dados dos cidad&atilde;os.Obs.: A tabela n&atilde;o esta totalmente normalizada para evitar complexidade desnecessaria de separar o nome e sobrenome do cliente, bem como a inclus&atilde;o de idOrganizacao para evitar a complexidade de utilizar o cpf como chave primaria.</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidadao (PK)</td><td class="tdTableDefinition">idCidadao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Chave primaria da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">cpf</td><td class="tdTableDefinition">VARCHAR(11)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para guardar o cpf do cliente sem formatacao</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(80)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para guardar o nome completo do cliente</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">email</td><td class="tdTableDefinition">email</td><td class="tdTableDefinition">VARCHAR(30)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o email</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idUsuario
+                &nbsp;(<a href="#usuarios">FK</a>)
+              </td><td class="tdTableDefinition">idUsuario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#usuarios">usuarios</a> through (idUsuario)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#cidadao_enderecos">cidadao_enderecos</a> referencing (idCidadao)
+                    </li>
+                    <li>
+                        <a href="#cidadao_telefones">cidadao_telefones</a> referencing (idCidadao)
+                    </li>
+                    <li>
+                        <a href="#coletas">coletas</a> referencing (idCidadao)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                cidadao_enderecos<a name="cidadao_enderecos"></a>
+            </h1>
+            <h2>
+      (Physical Name: cidadao_enderecos)
+      </h2>
+            <p class="comment">Tabela de enderecos dos cidadaos.</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidadaoEndereco (PK)</td><td class="tdTableDefinition">idCidadaoEndereco</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidadao (PK)
+                &nbsp;(<a href="#cidadao">FK</a>)
+              </td><td class="tdTableDefinition">idCidadao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Chave primaria da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">numero</td><td class="tdTableDefinition">numero</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o numero da residencia</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para informa&ccedil;&otilde;es para facilitar a identifica&ccedil;&atilde;o da resid&ecirc;ncia como: andar, bloco e algum ponto de refer&ecirc;ncia pr&oacute;ximo</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">cep</td><td class="tdTableDefinition">cep</td><td class="tdTableDefinition">VARCHAR(8)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">C&oacute;digo postal de um endereco</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idRegiao
+                &nbsp;(<a href="#regioes">FK</a>)
+              </td><td class="tdTableDefinition">idRegiao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">sigla
+                &nbsp;(<a href="#paises">FK</a>)
+              </td><td class="tdTableDefinition">sigla</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna contendo a sigla do pais</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">uf
+                &nbsp;(<a href="#unidades_federativas">FK</a>)
+              </td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar a cigla do unidade federativa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidade
+                &nbsp;(<a href="#cidades">FK</a>)
+              </td><td class="tdTableDefinition">idCidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idBairro
+                &nbsp;(<a href="#bairros">FK</a>)
+              </td><td class="tdTableDefinition">idBairro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idLogradouro
+                &nbsp;(<a href="#logradouros">FK</a>)
+              </td><td class="tdTableDefinition">idLogradouro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#cidadao">cidadao</a> through (idCidadao)
+                    </li>
+                    <li>
+                        <a href="#cidades">cidades</a> through (idCidade)
+                    </li>
+                    <li>
+                        <a href="#bairros">bairros</a> through (idBairro)
+                    </li>
+                    <li>
+                        <a href="#unidades_federativas">unidades_federativas</a> through (uf)
+                    </li>
+                    <li>
+                        <a href="#regioes">regioes</a> through (idRegiao)
+                    </li>
+                    <li>
+                        <a href="#paises">paises</a> through (sigla)
+                    </li>
+                    <li>
+                        <a href="#logradouros">logradouros</a> through (idLogradouro)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                cidadao_telefones<a name="cidadao_telefones"></a>
+            </h1>
+            <h2>
+      (Physical Name: cidadao_telefones)
+      </h2>
+            <p class="comment">Tabela para armazenar os dados de contato de um cidadao</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidadaoTelefone (PK)</td><td class="tdTableDefinition">idCidadaoTelefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidadao (PK)
+                &nbsp;(<a href="#cidadao">FK</a>)
+              </td><td class="tdTableDefinition">idCidadao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Chave primaria da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o telefone</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#cidadao">cidadao</a> through (idCidadao)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                cidades<a name="cidades"></a>
+            </h1>
+            <h2>
+      (Physical Name: cidades)
+      </h2>
+            <p class="comment">Tabela para armazenar as cidades relacionadas a um estado</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidade (PK)</td><td class="tdTableDefinition">idCidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">dsCidade</td><td class="tdTableDefinition">dsCidade</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna contendo o nome da cidade</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">uf
+                &nbsp;(<a href="#unidades_federativas">FK</a>)
+              </td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar a cigla do unidade federativa</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#unidades_federativas">unidades_federativas</a> through (uf)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#bairros">bairros</a> referencing (idCidade)
+                    </li>
+                    <li>
+                        <a href="#cidadao_enderecos">cidadao_enderecos</a> referencing (idCidade)
+                    </li>
+                    <li>
+                        <a href="#organizacao_enderecos">organizacao_enderecos</a> referencing (idCidade)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                coletas<a name="coletas"></a>
+            </h1>
+            <h2>
+      (Physical Name: coletas)
+      </h2>
+            <p class="comment">Tabela para armazenar os dados relativos a cada coleta realizada</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idColeta (PK)</td><td class="tdTableDefinition">idColeta</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">data</td><td class="tdTableDefinition">data</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar a data da coleta</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidadao
+                &nbsp;(<a href="#cidadao">FK</a>)
+              </td><td class="tdTableDefinition">idCidadao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Chave primaria da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idOrganizacao
+                &nbsp;(<a href="#organizacao">FK</a>)
+              </td><td class="tdTableDefinition">idOrganizacao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idItemColeta
+                &nbsp;(<a href="#itens_coleta">FK</a>)
+              </td><td class="tdTableDefinition">idItemColeta</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#cidadao">cidadao</a> through (idCidadao)
+                    </li>
+                    <li>
+                        <a href="#organizacao">organizacao</a> through (idOrganizacao)
+                    </li>
+                    <li>
+                        <a href="#itens_coleta">itens_coleta</a> through (idItemColeta)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                itens_coleta<a name="itens_coleta"></a>
+            </h1>
+            <h2>
+      (Physical Name: itens_coleta)
+      </h2>
+            <p class="comment">Tabela para guardar os tipos de materiais de cada coleta</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idItemColeta (PK)</td><td class="tdTableDefinition">idItemColeta</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idTipoMaterial
+                &nbsp;(<a href="#tipos_materiais">FK</a>)
+              </td><td class="tdTableDefinition">idTipoMaterial</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#tipos_materiais">tipos_materiais</a> through (idTipoMaterial)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#coletas">coletas</a> referencing (idItemColeta)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                logradouros<a name="logradouros"></a>
+            </h1>
+            <h2>
+      (Physical Name: logradouros)
+      </h2>
+            <p class="comment">
+                Tabela para guardar o nome das ruas, avenidas, ladeiras e etc..
+                <br>
+                que compoem um endereco
+            </p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idLogradouro (PK)</td><td class="tdTableDefinition">idLogradouro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">dsLogradouro</td><td class="tdTableDefinition">dsLogradouro</td><td class="tdTableDefinition">VARCHAR(40)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o nome do logradouro</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idBairro
+                &nbsp;(<a href="#bairros">FK</a>)
+              </td><td class="tdTableDefinition">idBairro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#bairros">bairros</a> through (idBairro)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#cidadao_enderecos">cidadao_enderecos</a> referencing (idLogradouro)
+                    </li>
+                    <li>
+                        <a href="#organizacao_enderecos">organizacao_enderecos</a> referencing (idLogradouro)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                organizacao<a name="organizacao"></a>
+            </h1>
+            <h2>
+      (Physical Name: organizacao)
+      </h2>
+            <p class="comment">
+                Tabela para armazenar os dados das empresas parceiras.
+                <br>
+                Obs.: A Tabela n&atilde;o esta totalmente normalizada para evitar complexidade desnecessaria, foi criada a coluna de idOrganizacao para evitar a necessidade de se utilizar o cnpj como pk.
+            </p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idOrganizacao (PK)</td><td class="tdTableDefinition">idOrganizacao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">VARCHAR(14)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna contendo o cnpj da empresa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">razaoSocial</td><td class="tdTableDefinition">razaoSocial</td><td class="tdTableDefinition">VARCHAR(40)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna contendo a razao social da empresa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">nomeFantasia</td><td class="tdTableDefinition">nomeFantasia</td><td class="tdTableDefinition">VARCHAR(40)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna contendo o nome fantasia da organizacao</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idUsuario
+                &nbsp;(<a href="#usuarios">FK</a>)
+              </td><td class="tdTableDefinition">idUsuario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#usuarios">usuarios</a> through (idUsuario)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#organizacao_enderecos">organizacao_enderecos</a> referencing (idOrganizacao)
+                    </li>
+                    <li>
+                        <a href="#organizacao_telefones">organizacao_telefones</a> referencing (idOrganizacao)
+                    </li>
+                    <li>
+                        <a href="#tipos_materiais">tipos_materiais</a> referencing (idOrganizacao)
+                    </li>
+                    <li>
+                        <a href="#coletas">coletas</a> referencing (idOrganizacao)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                organizacao_enderecos<a name="organizacao_enderecos"></a>
+            </h1>
+            <h2>
+      (Physical Name: organizacao_enderecos)
+      </h2>
+            <p class="comment">Tabela contendo os enderecos das organizacoes</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idOrganizacaoEndereco (PK)</td><td class="tdTableDefinition">idOrganizacaoEndereco</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idOrganizacao (PK)
+                &nbsp;(<a href="#organizacao">FK</a>)
+              </td><td class="tdTableDefinition">idOrganizacao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">numero</td><td class="tdTableDefinition">numero</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o numero da sede da empresa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar pontos de refer&ecirc;ncia para encontrar a empresa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">cep</td><td class="tdTableDefinition">cep</td><td class="tdTableDefinition">VARCHAR(8)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o cep do endereco da empresa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idRegiao
+                &nbsp;(<a href="#regioes">FK</a>)
+              </td><td class="tdTableDefinition">idRegiao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">sigla
+                &nbsp;(<a href="#paises">FK</a>)
+              </td><td class="tdTableDefinition">sigla</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna contendo a sigla do pais</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">uf
+                &nbsp;(<a href="#unidades_federativas">FK</a>)
+              </td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar a cigla do unidade federativa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idCidade
+                &nbsp;(<a href="#cidades">FK</a>)
+              </td><td class="tdTableDefinition">idCidade</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idBairro
+                &nbsp;(<a href="#bairros">FK</a>)
+              </td><td class="tdTableDefinition">idBairro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idLogradouro
+                &nbsp;(<a href="#logradouros">FK</a>)
+              </td><td class="tdTableDefinition">idLogradouro</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#organizacao">organizacao</a> through (idOrganizacao)
+                    </li>
+                    <li>
+                        <a href="#cidades">cidades</a> through (idCidade)
+                    </li>
+                    <li>
+                        <a href="#bairros">bairros</a> through (idBairro)
+                    </li>
+                    <li>
+                        <a href="#unidades_federativas">unidades_federativas</a> through (uf)
+                    </li>
+                    <li>
+                        <a href="#regioes">regioes</a> through (idRegiao)
+                    </li>
+                    <li>
+                        <a href="#paises">paises</a> through (sigla)
+                    </li>
+                    <li>
+                        <a href="#logradouros">logradouros</a> through (idLogradouro)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                organizacao_telefones<a name="organizacao_telefones"></a>
+            </h1>
+            <h2>
+      (Physical Name: organizacao_telefones)
+      </h2>
+            <p class="comment">Tabela para guardar os telefones para contato da organizacao</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idOrganizacaoTelefone (PK)</td><td class="tdTableDefinition">idOrganizacaoTelefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idOrganizacao (PK)
+                &nbsp;(<a href="#organizacao">FK</a>)
+              </td><td class="tdTableDefinition">idOrganizacao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o telefone</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#organizacao">organizacao</a> through (idOrganizacao)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                paises<a name="paises"></a>
+            </h1>
+            <h2>
+      (Physical Name: paises)
+      </h2>
+            <p class="comment">Tabela para armazenar os paises relacionados a uma regiao</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">sigla (PK)</td><td class="tdTableDefinition">sigla</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna contendo a sigla do pais</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">dsPais</td><td class="tdTableDefinition">dsPais</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para guardar o nome do pais</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idRegiao
+                &nbsp;(<a href="#regioes">FK</a>)
+              </td><td class="tdTableDefinition">idRegiao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#regioes">regioes</a> through (idRegiao)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#unidades_federativas">unidades_federativas</a> referencing (sigla)
+                    </li>
+                    <li>
+                        <a href="#cidadao_enderecos">cidadao_enderecos</a> referencing (sigla)
+                    </li>
+                    <li>
+                        <a href="#organizacao_enderecos">organizacao_enderecos</a> referencing (sigla)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                regioes<a name="regioes"></a>
+            </h1>
+            <h2>
+      (Physical Name: regioes)
+      </h2>
+            <p class="comment">Tabela para armazenar as regioes de maneira global</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idRegiao (PK)</td><td class="tdTableDefinition">idRegiao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">dsRegiao</td><td class="tdTableDefinition">dsRegiao</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para guardar o nome da regi&atilde;o</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#paises">paises</a> referencing (idRegiao)
+                    </li>
+                    <li>
+                        <a href="#cidadao_enderecos">cidadao_enderecos</a> referencing (idRegiao)
+                    </li>
+                    <li>
+                        <a href="#organizacao_enderecos">organizacao_enderecos</a> referencing (idRegiao)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                tipos_materiais<a name="tipos_materiais"></a>
+            </h1>
+            <h2>
+      (Physical Name: tipos_materiais)
+      </h2>
+            <p class="comment">Tabela para armazenar os tipos de materiais reciclaveis</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idTipoMaterial (PK)</td><td class="tdTableDefinition">idTipoMaterial</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">dsTipoMaterial</td><td class="tdTableDefinition">dsTipoMaterial</td><td class="tdTableDefinition">VARCHAR(10)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o nome do material</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idOrganizacao
+                &nbsp;(<a href="#organizacao">FK</a>)
+              </td><td class="tdTableDefinition">idOrganizacao</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#organizacao">organizacao</a> through (idOrganizacao)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#itens_coleta">itens_coleta</a> referencing (idTipoMaterial)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                unidades_federativas<a name="unidades_federativas"></a>
+            </h1>
+            <h2>
+      (Physical Name: unidades_federativas)
+      </h2>
+            <p class="comment">Tabela para armazenar as ciglas e o nome dos estados</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">uf (PK)</td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar a cigla do unidade federativa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">dsUnidadeFederativa</td><td class="tdTableDefinition">dsUnidadeFederativa</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para o nome da unidade federativa</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">sigla
+                &nbsp;(<a href="#paises">FK</a>)
+              </td><td class="tdTableDefinition">sigla</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna contendo a sigla do pais</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">References</p>
+                <ul>
+                    <li>
+                        <a href="#paises">paises</a> through (sigla)
+                    </li>
+                </ul>
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#cidades">cidades</a> referencing (uf)
+                    </li>
+                    <li>
+                        <a href="#cidadao_enderecos">cidadao_enderecos</a> referencing (uf)
+                    </li>
+                    <li>
+                        <a href="#organizacao_enderecos">organizacao_enderecos</a> referencing (uf)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tableNameHeading">
+            <h1>
+                usuarios<a name="usuarios"></a>
+            </h1>
+            <h2>
+      (Physical Name: usuarios)
+      </h2>
+            <p class="comment">Tabela para armazenar os dados de acesso dos usuarios</p>
+        </div>
+        <div class="table">
+            <table class="tableDefinition" width="100%">
+                <tr>
+                    <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">idUsuario (PK)</td><td class="tdTableDefinition">idUsuario</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Pk da tabela</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">login</td><td class="tdTableDefinition">login</td><td class="tdTableDefinition">VARCHAR(10)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar o login do usuario</div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="tdTableDefinition">senha</td><td class="tdTableDefinition">senha</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="comment">Coluna para armazenar a senha criptografada</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="references">
+                <p class="subTitle">Referenced By</p>
+                <ul>
+                    <li>
+                        <a href="#cidadao">cidadao</a> referencing (idUsuario)
+                    </li>
+                    <li>
+                        <a href="#organizacao">organizacao</a> referencing (idUsuario)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

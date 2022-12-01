@@ -11,11 +11,10 @@
  </source-databases>
  <target-database id="ppdb" dbcs-ref="DS0">
   <table id="TAB1" populated="true" UUID="c62cf764-f682-4ced-8cbb-c8a7e68fb3a7" name="cidadao" objectType="TABLE" physicalName="cidadao" >
-   <remarks>Tabela de dados dos cidadãos</remarks>
+   <remarks>Tabela de dados dos cidadãos.Obs.: A tabela não esta totalmente normalizada para evitar complexidade desnecessaria de separar o nome e sobrenome do cliente, bem como a inclusão de idOrganizacao para evitar a complexidade de utilizar o cpf como chave primaria.</remarks>
    <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL2" populated="true" UUID="5f05542a-bd26-424c-8b0b-928cfeda3944" autoIncrement="true" autoIncrementSequenceName="cidadao_idCidadao_seq" defaultValue="" name="idCidadao" nullable="0" physicalName="idCidadao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>Chave primaria da tabela
-</remarks>
+     <remarks>Chave primaria da tabela</remarks>
     </column>
     <column id="COL3" populated="true" UUID="816840e1-699e-43ea-ba64-bc4b1e3e2e04" autoIncrement="false" autoIncrementSequenceName="cidadao_cpf_seq" defaultValue="" name="cpf" nullable="0" physicalName="cpf" precision="11" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna para guardar o cpf do cliente sem formatacao</remarks>
@@ -26,7 +25,7 @@
     <column id="COL5" populated="true" UUID="9d2e83b7-f69a-40de-bbdb-f24236f7d416" autoIncrement="false" autoIncrementSequenceName="cidadao_email_seq" defaultValue="" name="email" nullable="1" physicalName="email" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna para armazenar o email</remarks>
     </column>
-    <column id="COL6" populated="true" UUID="6d40da98-fc54-4e8a-b56d-f9298b6f2538" autoIncrement="false" autoIncrementSequenceName="usuarios_idUsuario_seq" defaultValue="" name="idUsuario" nullable="0" physicalName="idUsuario" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL6" populated="true" UUID="6d40da98-fc54-4e8a-b56d-f9298b6f2538" autoIncrement="false" autoIncrementSequenceName="cidadao_idUsuario_seq" defaultValue="" name="idUsuario" nullable="0" physicalName="idUsuario" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     </folder>
@@ -41,7 +40,8 @@
    </folder>
   </table>
   <table id="TAB9" populated="true" UUID="5eca8957-4051-48c8-b188-d85c6a0b6a96" name="organizacao" objectType="TABLE" physicalName="organizacao" >
-   <remarks>Tabela para armazenar os dados das empresas parceiras</remarks>
+   <remarks>Tabela para armazenar os dados das empresas parceiras.
+Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnecessaria, foi criada a coluna de idOrganizacao para evitar a necessidade de se utilizar o cnpj como pk.</remarks>
    <folder id="FOLTAB91" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL10" populated="true" UUID="5e7e6e94-0a22-41a8-ac2f-159c1240e94c" autoIncrement="true" autoIncrementSequenceName="organizacao_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
@@ -55,7 +55,7 @@
     <column id="COL13" populated="true" UUID="3399deea-8638-468b-9a6e-ca39812df0cd" autoIncrement="false" autoIncrementSequenceName="organizacao_nomeFantasia_seq" defaultValue="" name="nomeFantasia" nullable="1" physicalName="nomeFantasia" precision="40" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna contendo o nome fantasia da organizacao</remarks>
     </column>
-    <column id="COL14" populated="true" UUID="9a18526a-1875-4e1f-bce6-7672d83e3db8" autoIncrement="false" autoIncrementSequenceName="usuarios_idUsuario_seq" defaultValue="" name="idUsuario" nullable="0" physicalName="idUsuario" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL14" populated="true" UUID="9a18526a-1875-4e1f-bce6-7672d83e3db8" autoIncrement="false" autoIncrementSequenceName="organizacao_idUsuario_seq" defaultValue="" name="idUsuario" nullable="0" physicalName="idUsuario" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     </folder>
@@ -101,14 +101,13 @@
     <column id="COL25" populated="true" UUID="9091b3df-3081-4496-aafc-9dc824962043" autoIncrement="false" autoIncrementSequenceName="coletas_data_seq" defaultValue="" name="data" nullable="0" physicalName="data" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks>Coluna para armazenar a data da coleta</remarks>
     </column>
-    <column id="COL26" populated="true" UUID="21edc2cf-561a-4c13-9a67-9af73f7af0c1" autoIncrement="false" autoIncrementSequenceName="cidadao_idCidadao_seq" defaultValue="" name="idCidadao" nullable="0" physicalName="idCidadao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>Chave primaria da tabela
-</remarks>
+    <column id="COL26" populated="true" UUID="21edc2cf-561a-4c13-9a67-9af73f7af0c1" autoIncrement="false" autoIncrementSequenceName="coletas_idCidadao_seq" defaultValue="" name="idCidadao" nullable="0" physicalName="idCidadao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Chave primaria da tabela</remarks>
     </column>
-    <column id="COL27" populated="true" UUID="3f5ea949-49ac-4973-bc99-3141e69f2d33" autoIncrement="false" autoIncrementSequenceName="organizacao_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL27" populated="true" UUID="3f5ea949-49ac-4973-bc99-3141e69f2d33" autoIncrement="false" autoIncrementSequenceName="coletas_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
-    <column id="COL28" populated="true" UUID="ac993228-2c12-4422-a11b-07bc6df173b5" autoIncrement="false" autoIncrementSequenceName="itens_coleta_idItemColeta_seq" defaultValue="" name="idItemColeta" nullable="0" physicalName="idItemColeta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL28" populated="true" UUID="ac993228-2c12-4422-a11b-07bc6df173b5" autoIncrement="false" autoIncrementSequenceName="coletas_idItemColeta_seq" defaultValue="" name="idItemColeta" nullable="0" physicalName="idItemColeta" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     </folder>
@@ -125,12 +124,11 @@
   <table id="TAB31" populated="true" UUID="d78a040d-d514-4413-bc07-014409d6d99c" name="cidadao_enderecos" objectType="TABLE" physicalName="cidadao_enderecos" >
    <remarks>Tabela de enderecos dos cidadaos.</remarks>
    <folder id="FOLTAB311" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL32" populated="true" UUID="07fe8d48-0d65-4b10-9dea-d3e0c140f36d" autoIncrement="true" autoIncrementSequenceName="cidadao_enderecos_idCidadaoEnderecoPk_seq" defaultValue="" name="idCidadaoEndereco" nullable="0" physicalName="idCidadaoEndereco" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL32" populated="true" UUID="07fe8d48-0d65-4b10-9dea-d3e0c140f36d" autoIncrement="true" autoIncrementSequenceName="cidadao_enderecos_idCidadaoEndereco_seq" defaultValue="" name="idCidadaoEndereco" nullable="0" physicalName="idCidadaoEndereco" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     <column id="COL33" populated="true" UUID="02819244-8f95-42e1-a9ae-3c9fa04aa287" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_idCidadao_seq" defaultValue="" name="idCidadao" nullable="0" physicalName="idCidadao" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>Chave primaria da tabela
-</remarks>
+     <remarks>Chave primaria da tabela</remarks>
     </column>
     <column id="COL34" populated="true" UUID="de6e394a-c829-40b9-975c-86dafd748b22" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_numero_seq" defaultValue="" name="numero" nullable="0" physicalName="numero" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Coluna para armazenar o numero da residencia</remarks>
@@ -141,7 +139,7 @@
     <column id="COL36" populated="true" UUID="50e206f1-bb57-451d-864f-d5102c0e6db1" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_cep_seq" defaultValue="" name="cep" nullable="1" physicalName="cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Código postal de um endereco</remarks>
     </column>
-    <column id="COL37" populated="true" UUID="0ea4bceb-368d-4b41-98df-6b072f37cde1" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_idRegiaoPk_seq" defaultValue="1" name="idRegiao" nullable="0" physicalName="idRegiao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL37" populated="true" UUID="0ea4bceb-368d-4b41-98df-6b072f37cde1" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_idRegiao_seq" defaultValue="1" name="idRegiao" nullable="0" physicalName="idRegiao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     <column id="COL38" populated="true" UUID="5c7c3b8a-9289-406d-a70f-edc901e346e5" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_sigla_seq" defaultValue="BR" name="sigla" nullable="0" physicalName="sigla" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
@@ -150,10 +148,10 @@
     <column id="COL39" populated="true" UUID="99106d66-1408-41de-9a60-7a64ff3a9026" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_uf_seq" defaultValue="ES" name="uf" nullable="0" physicalName="uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>Coluna para armazenar a cigla do unidade federativa</remarks>
     </column>
-    <column id="COL40" populated="true" UUID="265871e7-54ac-48fb-81db-40b068115472" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_idCidadePk_seq" defaultValue="1" name="idCidade" nullable="0" physicalName="idCidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL40" populated="true" UUID="265871e7-54ac-48fb-81db-40b068115472" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_idCidade_seq" defaultValue="1" name="idCidade" nullable="0" physicalName="idCidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
-    <column id="COL41" populated="true" UUID="b5d33c21-6a80-4966-869d-5fbee208c8ac" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_idBairroPk_seq" defaultValue="" name="idBairro" nullable="0" physicalName="idBairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL41" populated="true" UUID="b5d33c21-6a80-4966-869d-5fbee208c8ac" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_idBairro_seq" defaultValue="" name="idBairro" nullable="0" physicalName="idBairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     <column id="COL42" populated="true" UUID="6d438a8c-951e-4e3c-b771-7d40a3771c58" autoIncrement="false" autoIncrementSequenceName="cidadao_enderecos_idLogradouro_seq" defaultValue="" name="idLogradouro" nullable="0" physicalName="idLogradouro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -180,7 +178,7 @@
     <column id="COL48" populated="true" UUID="f0f8ec18-f3b9-4a41-a595-ca0bbd35d29e" autoIncrement="false" autoIncrementSequenceName="cidades_dsCidade_seq" defaultValue="" name="dsCidade" nullable="0" physicalName="dsCidade" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna contendo o nome da cidade</remarks>
     </column>
-    <column id="COL49" populated="true" UUID="1aa95507-6756-4b9c-b362-42a02407e614" autoIncrement="false" autoIncrementSequenceName="unidades_federativas_uf_seq" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL49" populated="true" UUID="1aa95507-6756-4b9c-b362-42a02407e614" autoIncrement="false" autoIncrementSequenceName="cidades_uf_seq" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>Coluna para armazenar a cigla do unidade federativa</remarks>
     </column>
     </folder>
@@ -203,7 +201,7 @@
     <column id="COL54" populated="true" UUID="df7e0551-509f-4624-ab12-51086199590c" autoIncrement="false" autoIncrementSequenceName="bairros_dsBairro_seq" defaultValue="" name="dsBairro" nullable="0" physicalName="dsBairro" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna para guardar o nome do bairro</remarks>
     </column>
-    <column id="COL55" populated="true" UUID="a7c4a836-f5f4-4d77-9bc1-e01213975ea0" autoIncrement="false" autoIncrementSequenceName="cidades_idCidadePk_seq" defaultValue="" name="idCidade" nullable="0" physicalName="idCidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL55" populated="true" UUID="a7c4a836-f5f4-4d77-9bc1-e01213975ea0" autoIncrement="false" autoIncrementSequenceName="bairros_idCidade_seq" defaultValue="" name="idCidade" nullable="0" physicalName="idCidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     </folder>
@@ -226,7 +224,7 @@
     <column id="COL60" populated="true" UUID="c46678ff-f1c9-473c-b8d6-8f82a37ed45c" autoIncrement="false" autoIncrementSequenceName="unidades_federativas_dsUnidadeFederativa_seq" defaultValue="" name="dsUnidadeFederativa" nullable="0" physicalName="dsUnidadeFederativa" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna para o nome da unidade federativa</remarks>
     </column>
-    <column id="COL61" populated="true" UUID="c39c9b45-4cf0-48b2-b61f-44dab58e1864" autoIncrement="false" autoIncrementSequenceName="paises_sigla_seq" defaultValue="" name="sigla" nullable="0" physicalName="sigla" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL61" populated="true" UUID="c39c9b45-4cf0-48b2-b61f-44dab58e1864" autoIncrement="false" autoIncrementSequenceName="unidades_federativas_sigla_seq" defaultValue="" name="sigla" nullable="0" physicalName="sigla" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>Coluna contendo a sigla do pais</remarks>
     </column>
     </folder>
@@ -243,7 +241,7 @@
   <table id="TAB64" populated="true" UUID="d5a4d820-1df4-481d-8b64-026c129903cf" name="regioes" objectType="TABLE" physicalName="regioes" >
    <remarks>Tabela para armazenar as regioes de maneira global</remarks>
    <folder id="FOLTAB641" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL65" populated="true" UUID="7de1a1e8-bccd-4df2-9b7f-ab57f134bba2" autoIncrement="true" autoIncrementSequenceName="regioes_idRegiaoPk_seq" defaultValue="" name="idRegiao" nullable="0" physicalName="idRegiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL65" populated="true" UUID="7de1a1e8-bccd-4df2-9b7f-ab57f134bba2" autoIncrement="true" autoIncrementSequenceName="regioes_idRegiao_seq" defaultValue="" name="idRegiao" nullable="0" physicalName="idRegiao" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     <column id="COL66" populated="true" UUID="f6e703e7-a2a5-4371-abb4-3f93ed802350" autoIncrement="false" autoIncrementSequenceName="regioes_dsRegiao_seq" defaultValue="" name="dsRegiao" nullable="0" physicalName="dsRegiao" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -269,7 +267,7 @@
     <column id="COL71" populated="true" UUID="4bcf1473-b722-4c3b-b427-97413e8d765d" autoIncrement="false" autoIncrementSequenceName="paises_dsPais_seq" defaultValue="" name="dsPais" nullable="0" physicalName="dsPais" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna para guardar o nome do pais</remarks>
     </column>
-    <column id="COL72" populated="true" UUID="5d5f1802-849c-4a51-9965-593d33d469d6" autoIncrement="false" autoIncrementSequenceName="regioes_idRegiaoPk_seq" defaultValue="" name="idRegiao" nullable="0" physicalName="idRegiao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL72" populated="true" UUID="5d5f1802-849c-4a51-9965-593d33d469d6" autoIncrement="false" autoIncrementSequenceName="paises_idRegiao_seq" defaultValue="" name="idRegiao" nullable="0" physicalName="idRegiao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     </folder>
@@ -314,8 +312,7 @@ que compoem um endereco</remarks>
      <remarks>Pk da tabela</remarks>
     </column>
     <column id="COL83" populated="true" UUID="52c7832b-8937-45a1-a6bb-a651019400f1" autoIncrement="false" autoIncrementSequenceName="cidadao_telefones_idCidadao_seq" defaultValue="" name="idCidadao" nullable="0" physicalName="idCidadao" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks>Chave primaria da tabela
-</remarks>
+     <remarks>Chave primaria da tabela</remarks>
     </column>
     <column id="COL84" populated="true" UUID="43b0eeaa-2123-4ac9-931f-3c01a2bf4dff" autoIncrement="false" autoIncrementSequenceName="cidadao_telefones_telefone_seq" defaultValue="" name="telefone" nullable="0" physicalName="telefone" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna para armazenar o telefone</remarks>
@@ -338,7 +335,7 @@ que compoem um endereco</remarks>
     <column id="COL89" populated="true" UUID="877a70cc-5c28-4c2c-a4b8-48f02c58206c" autoIncrement="true" autoIncrementSequenceName="organizacao_enderecos_idOrganizacao_seq" defaultValue="" name="idOrganizacaoEndereco" nullable="0" physicalName="idOrganizacaoEndereco" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
-    <column id="COL90" populated="true" UUID="d0888b9b-4dc1-4b09-9238-84ef7d4c5a97" autoIncrement="false" autoIncrementSequenceName="organizacao_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL90" populated="true" UUID="d0888b9b-4dc1-4b09-9238-84ef7d4c5a97" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     <column id="COL91" populated="true" UUID="ad15ba2d-e439-47cb-a4a4-1aa5eb0c79ae" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_numero_seq" defaultValue="" name="numero" nullable="0" physicalName="numero" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -350,22 +347,22 @@ que compoem um endereco</remarks>
     <column id="COL93" populated="true" UUID="561de752-94ce-4e01-b506-a22bc7249746" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_cep_seq" defaultValue="" name="cep" nullable="1" physicalName="cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna para armazenar o cep do endereco da empresa</remarks>
     </column>
-    <column id="COL94" populated="true" UUID="a0a6bc24-3e1f-451f-8614-a4a402916fde" autoIncrement="false" autoIncrementSequenceName="regioes_idRegiaoPk_seq" defaultValue="" name="idRegiao" nullable="0" physicalName="idRegiao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL94" populated="true" UUID="a0a6bc24-3e1f-451f-8614-a4a402916fde" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_idRegiao_seq" defaultValue="" name="idRegiao" nullable="0" physicalName="idRegiao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
-    <column id="COL95" populated="true" UUID="3d9afbac-aa20-462a-9406-8f58682f1801" autoIncrement="false" autoIncrementSequenceName="paises_sigla_seq" defaultValue="" name="sigla" nullable="0" physicalName="sigla" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL95" populated="true" UUID="3d9afbac-aa20-462a-9406-8f58682f1801" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_sigla_seq" defaultValue="" name="sigla" nullable="0" physicalName="sigla" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>Coluna contendo a sigla do pais</remarks>
     </column>
-    <column id="COL96" populated="true" UUID="2dd954ae-fb1b-4897-bd75-243d059556f9" autoIncrement="false" autoIncrementSequenceName="unidades_federativas_uf_seq" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL96" populated="true" UUID="2dd954ae-fb1b-4897-bd75-243d059556f9" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_uf_seq" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>Coluna para armazenar a cigla do unidade federativa</remarks>
     </column>
-    <column id="COL97" populated="true" UUID="4e3916e2-d4c2-4962-8642-88254755e34b" autoIncrement="false" autoIncrementSequenceName="cidades_idCidade_seq" defaultValue="" name="idCidade" nullable="0" physicalName="idCidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL97" populated="true" UUID="4e3916e2-d4c2-4962-8642-88254755e34b" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_idCidade_seq" defaultValue="" name="idCidade" nullable="0" physicalName="idCidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
-    <column id="COL98" populated="true" UUID="10544ff1-b0ca-4d9a-83d7-4a495094a442" autoIncrement="false" autoIncrementSequenceName="bairros_idBairro_seq" defaultValue="" name="idBairro" nullable="0" physicalName="idBairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL98" populated="true" UUID="10544ff1-b0ca-4d9a-83d7-4a495094a442" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_idBairro_seq" defaultValue="" name="idBairro" nullable="0" physicalName="idBairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
-    <column id="COL99" populated="true" UUID="1ac4b768-e5e5-4642-85c3-4f24250b5a19" autoIncrement="false" autoIncrementSequenceName="logradouros_idLogradouro_seq" defaultValue="" name="idLogradouro" nullable="0" physicalName="idLogradouro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL99" populated="true" UUID="1ac4b768-e5e5-4642-85c3-4f24250b5a19" autoIncrement="false" autoIncrementSequenceName="organizacao_enderecos_idLogradouro_seq" defaultValue="" name="idLogradouro" nullable="0" physicalName="idLogradouro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     </folder>
@@ -389,7 +386,7 @@ que compoem um endereco</remarks>
     <column id="COL105" populated="true" UUID="2faf37ea-94b8-460b-9493-aac4b464b42d" autoIncrement="false" autoIncrementSequenceName="tipos_materiais_dsTipoMaterial_seq" defaultValue="" name="dsTipoMaterial" nullable="0" physicalName="dsTipoMaterial" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Coluna para armazenar o nome do material</remarks>
     </column>
-    <column id="COL106" populated="true" UUID="4942ce5d-01f4-471f-ba89-bf8eaf3e9dd6" autoIncrement="false" autoIncrementSequenceName="organizacao_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL106" populated="true" UUID="4942ce5d-01f4-471f-ba89-bf8eaf3e9dd6" autoIncrement="false" autoIncrementSequenceName="tipos_materiais_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     </folder>
@@ -409,7 +406,7 @@ que compoem um endereco</remarks>
     <column id="COL110" populated="true" UUID="61d64a2e-ebe0-435a-af27-4097801ce5b8" autoIncrement="true" autoIncrementSequenceName="organizacao_telefones_idOrganizacaoTelefone_seq" defaultValue="" name="idOrganizacaoTelefone" nullable="0" physicalName="idOrganizacaoTelefone" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
-    <column id="COL111" populated="true" UUID="889e432f-12ca-4abb-9304-048c517ef4c7" autoIncrement="false" autoIncrementSequenceName="organizacao_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL111" populated="true" UUID="889e432f-12ca-4abb-9304-048c517ef4c7" autoIncrement="false" autoIncrementSequenceName="organizacao_telefones_idOrganizacao_seq" defaultValue="" name="idOrganizacao" nullable="0" physicalName="idOrganizacao" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     <column id="COL112" populated="true" UUID="c17c6d4f-cef7-48c9-8ff6-3e06312b2b67" autoIncrement="false" autoIncrementSequenceName="organizacao_telefones_telefone_seq" defaultValue="" name="telefone" nullable="0" physicalName="telefone" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -428,13 +425,12 @@ que compoem um endereco</remarks>
    </folder>
   </table>
   <table id="TAB116" populated="true" UUID="331934ae-cd03-4b0f-849c-c6801ae86f1f" name="itens_coleta" objectType="TABLE" physicalName="itens_coleta" >
-   <remarks>Tabela para guardar os tipos de materiais de cada coleta
-</remarks>
+   <remarks>Tabela para guardar os tipos de materiais de cada coleta</remarks>
    <folder id="FOLTAB1161" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL117" populated="true" UUID="8fda36b7-1fee-4694-801d-ce5acaab12b0" autoIncrement="true" autoIncrementSequenceName="itens_coleta_idItemColeta_seq" defaultValue="" name="idItemColeta" nullable="0" physicalName="idItemColeta" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
-    <column id="COL118" populated="true" UUID="b7fac6f1-4f78-4e0b-a799-fec163b22da2" autoIncrement="false" autoIncrementSequenceName="tipos_materiais_idTipoMaterial_seq" defaultValue="" name="idTipoMaterial" nullable="0" physicalName="idTipoMaterial" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL118" populated="true" UUID="b7fac6f1-4f78-4e0b-a799-fec163b22da2" autoIncrement="false" autoIncrementSequenceName="itens_coleta_idTipoMaterial_seq" defaultValue="" name="idTipoMaterial" nullable="0" physicalName="idTipoMaterial" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Pk da tabela</remarks>
     </column>
     </folder>
@@ -538,7 +534,7 @@ que compoem um endereco</remarks>
  <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="0.7071067811865468" viewportX="34" viewportY="379" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.7071067811865468" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="679" y="28" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB9" x="1045" y="30" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB17" x="646" y="212" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
