@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <!-- Fonte ends-->
-    <title>Login</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/estilo.css">
 </head>
@@ -72,27 +72,39 @@
                 </li>
             </ul>
         </nav>
-
+        <a href="#" class="botao-secundary">Login</a>
 
     </header>
     <!-- Header Section End's -->
 
-    <div class="login-Container">
-        <h2 class="login-h2">Login do Cidadão</h2>
-        <form action="" class="formulario-login">
-            <label for="nome">Nome</label>
-            <input class="nome-login" type="text" name="nome" placeholder="Digite seu nome">
-            <label for="password">Senha</label>
-            <input class="senha-login" type="password" name="password" placeholder="Digite sua senha">
-            <a href="" class="sou-colaborador">Sou Colaborador</a>
-            <a href="" class="cadastra-se">Cadastra-se Aqui!</a>
+    <div class="cadastro-default-Container">
+        <h2 class="">Cadastro Colaborador</h2>
+        <div class="timeline-cadastro">
+            <img src="../assets/images/timeline-cadastro.png" alt="">
+        </div>
+
+        <form action="" class="formulario-cadastro">
+            <label for="razao-social">Razao Social</label>
+            <input class="razao-social-cadastro" type="text" name="razao-social" placeholder="Digite sua razao social">
+            <label for="CNPJ">CNPJ</label>
+            <input class="cnpj-cadastro-colaborador" type="text" name="cnpj" placeholder="Digite seu cnpj">
+            <label for="senha">I.Estadual</label>
+            <input class="inscricao-estadual-cadastro-colaborador" type="text" name="i.estadual"
+                placeholder="Digite sua inscricão estadual">
+            <label for="senha">Senha</label>
+
+            <input class="senha-cadastro" type="password" name="password" placeholder="Digite sua senha">
+            <label for="confirmar-senha">Confirmar Senha</label>
+            <input class="confirmar-senha-cadastro" type="password" name="confirmar-senha"
+                placeholder="Digite sua senha">
+            <input class="botao-primary" type="submit" name="botao-proximo-cadastro" value="Próximo">
+
+
         </form>
-        <a href="" class="botao-primary">Login</a>
+        <a href="" class="cadastrar-como-cidadao">Quero Me Cadastrar Como Cidadão</a>
 
     </div>
-    <div class="img-lixeira-login">
-        <img src="../assets/images/lixeira-login.png" alt="">
-    </div>
+
 
 
 
