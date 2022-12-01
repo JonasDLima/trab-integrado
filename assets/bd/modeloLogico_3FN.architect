@@ -34,7 +34,7 @@
     <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX7" populated="true" UUID="e5a5d272-d1cd-46d3-a252-fcf482940410" clustered="false" name="idCidadaoPk" physicalName="idCidadaoPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX7" populated="true" UUID="e5a5d272-d1cd-46d3-a252-fcf482940410" clustered="false" name="idCidadaoPk" physicalName="idcidadaopk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC8" populated="true" UUID="b560ee6b-7ac5-4183-8dc6-a89f109b4373" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="idCidadao" physicalName="idCidadao" />
     </index>
    </folder>
@@ -64,7 +64,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB92" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB94" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX15" populated="true" UUID="ddb634a7-4831-4bea-9a5c-c668d83faf06" clustered="false" name="idOrganizacaopk" physicalName="idOrganizacaopk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX15" populated="true" UUID="ddb634a7-4831-4bea-9a5c-c668d83faf06" clustered="false" name="idOrganizacaoPk" physicalName="idorganizacaopk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC16" populated="true" UUID="b045f57e-f6b3-4119-bc22-18f1a5776117" ascendingOrDescending="UNSPECIFIED" column-ref="COL10" name="idOrganizacao" physicalName="idOrganizacao" />
     </index>
    </folder>
@@ -87,7 +87,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB172" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB174" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX21" populated="true" UUID="0e2fcc39-6357-4d56-acb2-a20670cbfa4f" clustered="false" name="idUsuariosPk" physicalName="idUsuariosPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX21" populated="true" UUID="0e2fcc39-6357-4d56-acb2-a20670cbfa4f" clustered="false" name="idUsuariosPk" physicalName="idusuariospk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC22" populated="true" UUID="548754bf-3f93-4fbf-ab66-9bac448bb950" ascendingOrDescending="UNSPECIFIED" column-ref="COL18" name="idUsuario" physicalName="idUsuario" />
     </index>
    </folder>
@@ -116,7 +116,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB232" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB234" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX29" populated="true" UUID="520057eb-30d5-4d84-be41-a546f38c9b63" clustered="false" name="idColetasPk" physicalName="idColetasPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX29" populated="true" UUID="520057eb-30d5-4d84-be41-a546f38c9b63" clustered="false" name="idColetasPk" physicalName="idcoletaspk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC30" populated="true" UUID="7e7d6817-2c71-47d3-be68-adf9376e7a6e" ascendingOrDescending="UNSPECIFIED" column-ref="COL24" name="idColeta" physicalName="idColeta" />
     </index>
    </folder>
@@ -163,7 +163,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB312" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB314" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX43" populated="true" UUID="112cc537-9449-4498-b9db-41955aa812c8" clustered="false" name="idCidadaoEnderecoPk" physicalName="idCidadaoEnderecoPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX43" populated="true" UUID="112cc537-9449-4498-b9db-41955aa812c8" clustered="false" name="idCidadaoEnderecoPk" physicalName="idcidadaoenderecopk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC44" populated="true" UUID="04357df7-61a1-4739-84b3-caf96ec06cd0" ascendingOrDescending="UNSPECIFIED" column-ref="COL32" name="idCidadaoEndereco" physicalName="idCidadaoEndereco" />
      <index-column id="IDC45" populated="true" UUID="3ff7e638-445c-46da-96a6-c900f6070c86" ascendingOrDescending="UNSPECIFIED" column-ref="COL33" name="idCidadao" physicalName="idCidadao" />
     </index>
@@ -187,7 +187,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB462" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB464" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX50" populated="true" UUID="b9765a19-87e3-4365-99f4-82423aa25cde" clustered="false" name="idCidadePk" physicalName="idCidadePk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX50" populated="true" UUID="b9765a19-87e3-4365-99f4-82423aa25cde" clustered="false" name="idCidadePk" physicalName="idcidadepk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC51" populated="true" UUID="d09a1469-5261-4caa-b0c0-1a45fdf64eba" ascendingOrDescending="UNSPECIFIED" column-ref="COL47" name="idCidade" physicalName="idCidade" />
     </index>
    </folder>
@@ -210,7 +210,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB522" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB524" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX56" populated="true" UUID="4ba6eb63-50b4-47c9-a0da-2bdf017c159e" clustered="false" name="idBairroPk" physicalName="idBairroPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX56" populated="true" UUID="4ba6eb63-50b4-47c9-a0da-2bdf017c159e" clustered="false" name="idBairroPk" physicalName="idbairropk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC57" populated="true" UUID="7e743106-39a1-4ab4-ac29-759503f500ca" ascendingOrDescending="UNSPECIFIED" column-ref="COL53" name="idBairro" physicalName="idBairro" />
     </index>
    </folder>
@@ -233,7 +233,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB582" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB584" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX62" populated="true" UUID="81d97c2b-c74c-4c77-be52-e2897dbd0b47" clustered="false" name="idUnidadeFederativa" physicalName="idUnidadeFederativa" primaryKeyIndex="true" unique="false" >
+    <index id="IDX62" populated="true" UUID="81d97c2b-c74c-4c77-be52-e2897dbd0b47" clustered="false" name="idUnidadeFederativa" physicalName="idunidadefederativa" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC63" populated="true" UUID="ef768b43-827f-408c-a167-bd9142a41a6c" ascendingOrDescending="UNSPECIFIED" column-ref="COL59" name="uf" physicalName="uf" />
     </index>
    </folder>
@@ -253,7 +253,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB642" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB644" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX67" populated="true" UUID="3173a960-993b-4255-a315-c3535a628186" clustered="false" name="idRegiaoPk" physicalName="idRegiaoPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX67" populated="true" UUID="3173a960-993b-4255-a315-c3535a628186" clustered="false" name="idRegiaoPk" physicalName="idregiaopk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC68" populated="true" UUID="85b86912-d7c6-4154-8936-38e0fbc5021a" ascendingOrDescending="UNSPECIFIED" column-ref="COL65" name="idRegiao" physicalName="idRegiao" />
     </index>
    </folder>
@@ -276,7 +276,7 @@ Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnece
     <folder id="FOLTAB692" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB694" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX73" populated="true" UUID="66bfa7f1-1f79-4024-865f-42a5f1a1a65c" clustered="false" name="idPais" physicalName="idPais" primaryKeyIndex="true" unique="false" >
+    <index id="IDX73" populated="true" UUID="66bfa7f1-1f79-4024-865f-42a5f1a1a65c" clustered="false" name="idPais" physicalName="idpais" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC74" populated="true" UUID="5ff79b35-f5f8-47b2-b0a5-5683683e3e5d" ascendingOrDescending="UNSPECIFIED" column-ref="COL70" name="sigla" physicalName="sigla" />
     </index>
    </folder>
@@ -300,7 +300,7 @@ que compoem um endereco</remarks>
     <folder id="FOLTAB752" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB754" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX79" populated="true" UUID="831aba44-7e5b-4cf4-95aa-8cd83d6be4a1" clustered="false" name="idLogradouroPk" physicalName="idLogradouroPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX79" populated="true" UUID="831aba44-7e5b-4cf4-95aa-8cd83d6be4a1" clustered="false" name="idLogradouroPk" physicalName="idlogradouropk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC80" populated="true" UUID="d231e797-d09e-48b9-82d4-6851a847b5f8" ascendingOrDescending="UNSPECIFIED" column-ref="COL76" name="idLogradouro" physicalName="idLogradouro" />
     </index>
    </folder>
@@ -323,7 +323,7 @@ que compoem um endereco</remarks>
     <folder id="FOLTAB812" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB814" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX85" populated="true" UUID="4c4b30fb-4922-485a-9ba1-73b66791fcfc" clustered="false" name="idCidadaoTelefonesPk" physicalName="idCidadaoTelefonesPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX85" populated="true" UUID="4c4b30fb-4922-485a-9ba1-73b66791fcfc" clustered="false" name="idCidadaoTelefonesPk" physicalName="idcidadaotelefonespk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC86" populated="true" UUID="e177dd19-cbef-449a-8b23-4476fc2a5312" ascendingOrDescending="UNSPECIFIED" column-ref="COL82" name="idCidadaoTelefone" physicalName="idCidadaoTelefone" />
      <index-column id="IDC87" populated="true" UUID="075629be-0591-4adc-a056-816c3323178a" ascendingOrDescending="UNSPECIFIED" column-ref="COL83" name="idCidadao" physicalName="idCidadao" />
     </index>
@@ -371,7 +371,7 @@ que compoem um endereco</remarks>
     <folder id="FOLTAB882" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB884" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX100" populated="true" UUID="c4317f78-d2a5-4fcf-9fef-268bbf77ae8a" clustered="false" name="idOrganizacaoPk" physicalName="idOrganizacaoPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX100" populated="true" UUID="c4317f78-d2a5-4fcf-9fef-268bbf77ae8a" clustered="false" name="idOrganizacaoEnderecosPk" physicalName="idorganizacaoenderecospk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC101" populated="true" UUID="8b3bc6c0-2c34-42d9-83c8-fb29bb0648a2" ascendingOrDescending="UNSPECIFIED" column-ref="COL89" name="idOrganizacaoEndereco" physicalName="idOrganizacaoEndereco" />
      <index-column id="IDC102" populated="true" UUID="bcf8713e-ad2e-4d6f-8532-118a84cb82d7" ascendingOrDescending="UNSPECIFIED" column-ref="COL90" name="idOrganizacao" physicalName="idOrganizacao" />
     </index>
@@ -395,7 +395,7 @@ que compoem um endereco</remarks>
     <folder id="FOLTAB1032" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB1034" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX107" populated="true" UUID="1474a590-b17f-4e08-a287-53a3e108f6da" clustered="false" name="idTiposMateriaisPk" physicalName="idTiposMateriaisPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX107" populated="true" UUID="1474a590-b17f-4e08-a287-53a3e108f6da" clustered="false" name="idTiposMateriaisPk" physicalName="idtiposmateriaispk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC108" populated="true" UUID="4b750a22-a32b-412d-a5f8-c6ce62f5c8fe" ascendingOrDescending="UNSPECIFIED" column-ref="COL104" name="idTipoMaterial" physicalName="idTipoMaterial" />
     </index>
    </folder>
@@ -418,7 +418,7 @@ que compoem um endereco</remarks>
     <folder id="FOLTAB1092" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB1094" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX113" populated="true" UUID="e0f6f640-e324-49cf-ae2e-029cc89c1ca2" clustered="false" name="idOrganizacaoTelefones" physicalName="idOrganizacaoTelefones" primaryKeyIndex="true" unique="false" >
+    <index id="IDX113" populated="true" UUID="e0f6f640-e324-49cf-ae2e-029cc89c1ca2" clustered="false" name="idOrganizacaoTelefones" physicalName="idorganizacaotelefones" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC114" populated="true" UUID="a21779ec-69ee-4d1a-9528-b734a644156d" ascendingOrDescending="UNSPECIFIED" column-ref="COL110" name="idOrganizacaoTelefone" physicalName="idOrganizacaoTelefone" />
      <index-column id="IDC115" populated="true" UUID="9ef2c123-29b8-43e1-baa9-8fa3283d4b82" ascendingOrDescending="UNSPECIFIED" column-ref="COL111" name="idOrganizacao" physicalName="idOrganizacao" />
     </index>
@@ -439,7 +439,7 @@ que compoem um endereco</remarks>
     <folder id="FOLTAB1162" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB1164" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX119" populated="true" UUID="8761f8a7-7e0b-4c1f-a35a-46b709423179" clustered="false" name="idItensColetaPk" physicalName="idItensColetaPk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX119" populated="true" UUID="8761f8a7-7e0b-4c1f-a35a-46b709423179" clustered="false" name="idItensColetaPk" physicalName="iditenscoletapk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC120" populated="true" UUID="8124ce4a-0c29-4f8d-8735-4ca5c9538db8" ascendingOrDescending="UNSPECIFIED" column-ref="COL117" name="idItemColeta" physicalName="idItemColeta" />
     </index>
    </folder>
@@ -531,7 +531,7 @@ que compoem um endereco</remarks>
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="0.7071067811865468" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
