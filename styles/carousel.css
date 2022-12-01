@@ -1,0 +1,136 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+.media-scroller {
+    display: grid;
+    gap: 16px;
+    grid-auto-flow: column;
+    padding-left: 16px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.centralizador {
+    display: flex;
+    justify-content: center;
+}
+
+.media-scroller--with-groups {
+    grid-auto-columns: 80%;
+}
+
+.media-group {
+    display: grid;
+    gap: var(--_spacer);
+    grid-auto-flow: column;
+}
+
+.media-element {
+    background-color: var(--primary);
+    display: grid;
+    grid-template-rows: min-content;
+    gap: var(--_spacer);
+    padding: var(--_spacer);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-2);
+}
+
+.media-element h2 {
+    font-weight: 700;
+    color: var(--alternativeColor);
+    padding: 8px 16px;
+}
+
+.media-element h3 {
+    color: var(--alternativeColor);
+    text-align: center;
+    font-weight: 400;
+    padding: 14px 32px;
+}
+
+.media-element a {
+    text-decoration: none;
+    color: var(--alternativeColor);
+    white-space: nowrap;
+    text-align: center;
+    max-width: 209px;
+    margin: auto auto 0 auto;
+    padding: 17px 60px;
+}
+
+.cidadao-background {
+    background-image: url(../assets/images/Bushes-cidadao.png), url(../assets/images/Character-2-cidadao.png), url(../assets/images/lilies-cidadao.png), url(../assets/images/Forest-cidadao.png), url(../assets/images/Big-Bush-cidadao.png);
+
+    background-position: 26% 77%, 34% 53%, 16% 70%, 99% 23%, 1% 36%;
+}
+
+.colaborador-background {
+    background-image: url(../assets/images/Bushes-cidadao.png), url(../assets/images/lilies-cidadao.png), url(../assets/images/Recycle-Truck-colaborador.png), url(../assets/images/Forest-cidadao.png), url(../assets/images/Big-Bush-cidadao.png);
+
+    background-position: 26% 77%, 34% 80%, 72px 59%, 99% 23%, 1% 36%;
+}
+
+@media (max-width: 640px) {
+    .media-element {
+        width: 321px;
+        height: 598px;
+    }
+
+    .media-element h2 {
+        font-size: 20px;
+    }
+
+    .media-element h3 {
+        font-size: 20px;
+    }
+
+    .media-element a {
+        max-width: 164px;
+        height: 54px;
+        padding: 16px 17px;
+        margin: 368px auto 0 auto;
+    }
+
+}
+
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snaps-inline>* {
+    scroll-snap-align: start;
+}
+
+/* general styling */
+
+.container {
+    inline-size: min(100% - 4rem, 70rem);
+    margin-inline: auto;
+}
+
+.flow {
+    display: grid;
+    gap: var(--size-3);
+}
+
+.page-header {
+    padding-block: var(--size-9);
+    margin-block-end: var(--size-9);
+    background: var(--gradient-16);
+    color: var(--gray-0);
+    box-shadow: var(--shadow-2);
+}
+
+.page-title {
+    font-size: var(--font-size-fluid-3);
+}
+
+.page-subtitle {
+    font-size: var(--font-size-fluid-1);
+}
+
+.section-title {
+    padding-inline-start: var(--size-6);
+    margin-block: var(--size-9) var(--size-3);
+}

@@ -115,6 +115,7 @@ main {
 }
 
 .botao-primary {
+
     border-radius: 4px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     color: var(--alternativeColor);
@@ -212,8 +213,131 @@ b {
 
 /* Cadastro page */
 
+.cadastro-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cadastro-Container h2 {
+    font-weight: 700;
+    color: var(--textColor);
+    text-align: center;
+    padding: 64px 0;
+    font-size: 24px;
+    white-space: nowrap;
+
+}
 
 /* Cadastro ends */
+
+/* Login page */
+
+
+
+.login-Container {
+
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.login-h2 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--textColor);
+    margin-bottom: 32px;
+}
+
+
+.login-Container label,
+.login-Container input {
+
+    text-align: left;
+    display: block;
+
+}
+
+.login-Container input {
+    border: none;
+    width: 500px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+
+
+.icone-show-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--textColor);
+    cursor: pointer;
+    display: none;
+}
+
+.login-Container label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--textColor);
+    font-size: 12px;
+}
+
+.senha-login {
+    margin-bottom: 14px;
+}
+
+::placeholder {
+    color: var(--textColor);
+    font-weight: 500;
+}
+
+.sou-colaborador {
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cadastra-se {
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 260px;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.login-Container .botao-primary {
+    margin-top: 30px;
+    text-align: center;
+    border: none;
+    max-width: 350px;
+    width: 280px;
+
+}
+
+.img-lixeira-login {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+
+/* Login ends */
+
+
 @media (max-width: 640px) {
     .mobile-visible {
         display: block;
@@ -312,38 +436,13 @@ b {
     }
 
     /* Cadastro page */
-    .cadastro-Container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
 
     .cadastro-Container h2 {
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--textColor);
-        margin-top: 20px;
+        padding: 64px 0;
+        font-size: 24px;
+        white-space: nowrap;
     }
 
-    .modal-Cadastro-Container {
-        width: 679px;
-        height: 50px;
-        transform: rotate(-90deg);
-        transform-origin: right top;
-        overflow-y: auto;
-        overflow-x: hidden;
-
-    }
-
-    .modal-Cadastro-Container div {
-        margin: 24px 12px;
-        background-color: black;
-        width: 325px;
-        height: 50px;
-        transform: rotate(90deg);
-        transform-origin: right top;
-    }
 
     /* Cadastro ends */
 }
