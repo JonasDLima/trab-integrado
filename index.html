@@ -15,6 +15,7 @@
   <!-- Fonte ends-->
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/estilo.css">
+  <link rel="stylesheet" href="styles/carouselJS.css">
 
   <title>Eco Trash</title>
 </head>
@@ -42,10 +43,10 @@
               <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">Cadastrar-se</a>
+              <a href="./pages/cadastro.html">Cadastrar-se</a>
             </li>
             <li>
-              <a href="#">Sou Colaborador</a>
+              <a href="./pages/login-colaborador.html">Sou Colaborador</a>
             </li>
           </ul>
         </div>
@@ -70,12 +71,12 @@
           <a href="./pages/cadastro.html">Cadastrar-se</a>
         </li>
         <li>
-          <a href="#">Sou Colaborador</a>
+          <a href="./pages/login-colaborador.html">Sou Colaborador</a>
         </li>
       </ul>
     </nav>
 
-    <a href="#" class="botao-secundary">Login</a>
+    <a href="./pages/login-cidadao.html" class="botao-secundary">Login</a>
   </header>
   <!-- Header Section End's -->
 
@@ -106,11 +107,27 @@
       </div>
       <a href="./pages/cadastro.html" class="botao-primary mobile-hidden">Quero Fazer Parte!</a>
     </section>
+
+
   </main>
+  <section class="boxContainer-About">
+    <h3>Formas de Coletar o Lixo</h3>
+
+    <div style="width: calc(100% - 20px);">
+      <div class="div_imagens">
+        <img id="img1" class="img" src="adao_negro.jpg" alt="aqui tem uma imagem">
+        <img id="img2" class="img" src="miranha.jpg" alt="aqui tem uma imagem">
+        <img id="img3" class="img" src="vingadores.jpeg" alt="aqui tem uma imagem">
+        <img class="arrow_direita" src="./assets/images/navegate_back.png" alt="aqui tem uma imagem" click="clicou">
+        <img class="arrow_esquerda" src="./assets/images/navegate_enter.png" alt="aqui tem uma imagem" click="clicou">
+      </div>
+    </div>
+
+  </section>
 
 
 
-
+  <script src="/js/carousel.js"></script>
 </body>
 
 </html>
