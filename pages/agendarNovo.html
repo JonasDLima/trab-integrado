@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Concluido</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/estilo.css">
+</head>
+
+<style>
+    label {
+        font-size: 12;
+        color: var(--textColor);
+    }
+
+    input,
+    select {
+        background-color: var(--background) !important;
+        border: none !important;
+        border-bottom: 1px solid black !important;
+        border-radius: 0 !important;
+
+    }
+
+    .mb-3 {
+        width: 100%;
+    }
+
+    @media (min-width: 640px) {
+        .sectionCidadaoHome {
+            max-width: 662px;
+            margin: 0 auto;
+        }
+    }
+</style>
+
+<body>
+    <header class="cabecalho">
+
+        <a class="toggle_button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+            aria-controls="offcanvasExample">
+            <img src="../assets/svg/Togle_button.svg" alt="">
+        </a>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <img src="../assets/images/logo.png" alt="Logo da Empresa">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" style="position: absolute;"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="">
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="/pages/cadastro.html">Agendar</a>
+                        </li>
+                        <li>
+                            <a href="#">Meus Agendamentos</a>
+                        </li>
+                        <li>
+                            <a href="#">Sair</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown mt-3">
+
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html"
+            class="logo d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+
+            <img src="../assets/images/logo.png" alt="Logo da Empresa">
+
+        </a>
+
+        <nav class="navegacao">
+            <ul>
+                <li class="selecionado">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="/pages/cadastro.html">Agendar</a>
+                </li>
+                <li>
+                    <a href="#">Meus Agendamentos</a>
+                </li>
+                <li>
+                    <a href="#">Sair</a>
+                </li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <section class="sectionCidadaoHome">
+        <h2 class="subTituloHomePage">Agendar Nova Coleta</h2>
+
+        <div class="mb-3">
+            <label for="dataAgendar" class="form-label">Selecione o Tipo de Lixo</label>
+            <select class="form-select " aria-label="Default select example">
+                <option selected>Escolha o tipo de lixo</option>
+                <option value="1">Metal</option>
+                <option value="2">Papel</option>
+                <option value="3">Orgânico</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="dataAgendar" class="form-label">Selecione a Data</label>
+            <input type="date" class="form-control" id="dataAgendar" placeholder="Selecione a Data">
+        </div>
+        <div class="mb-3">
+            <label for="endereçoAgendar" class="form-label">Selecione a Data</label>
+            <input type="text" class="form-control" id="endereçoAgendar" placeholder="Digite seu endereço">
+        </div>
+
+        <a class="botao-primary openModal" href="" style="margin-top: 64px; padding: 16px 58px">Marcar</a>
+    </section>
+
+    <div id="simpleModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Agendar Coleta</h2>
+            </div>
+            <div class="modal-body">
+                <p>Deseja Mesmo Agendar a coleta?</p>
+            </div>
+            <div class="modal-footer">
+                <h3 class="closeBtn">Ainda Não</h3>
+                <a href="./concluidoCidadao.html">Sim</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/modal.js"></script>
+</body>
+
+</html>

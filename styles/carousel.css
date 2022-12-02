@@ -26,6 +26,9 @@
 }
 
 .media-element {
+    height: 660px;
+    width: 35vw;
+    max-width: 625px;
     background-color: var(--primary);
     display: grid;
     grid-template-rows: min-content;
@@ -38,13 +41,16 @@
 .media-element h2 {
     font-weight: 700;
     color: var(--alternativeColor);
-    padding: 8px 16px;
+    padding: 16px 32px;
+    font-size: 32px;
 }
 
 .media-element h3 {
     color: var(--alternativeColor);
     text-align: center;
     font-weight: 400;
+    margin: 0 auto;
+    font-size: 24px;
     padding: 14px 32px;
 }
 
@@ -53,27 +59,35 @@
     color: var(--alternativeColor);
     white-space: nowrap;
     text-align: center;
-    max-width: 209px;
-    margin: auto auto 0 auto;
+    margin: auto auto 14px auto;
     padding: 17px 60px;
 }
 
 .cidadao-background {
-    background-image: url(../assets/images/Bushes-cidadao.png), url(../assets/images/Character-2-cidadao.png), url(../assets/images/lilies-cidadao.png), url(../assets/images/Forest-cidadao.png), url(../assets/images/Big-Bush-cidadao.png);
+    background-image: url(../assets/images/Bushes-cidadao.png), url(../assets/images/lilies-cidadao.png), url(../assets/images/Bushes-cidadao.png), url(../assets/images/Character-2-cidadao.png), url(../assets/images/lilies-cidadao.png), url(../assets/images/Forest-cidadao.png), url(../assets/images/Big-Bush-cidadao.png);
 
-    background-position: 26% 77%, 34% 53%, 16% 70%, 99% 23%, 1% 36%;
+    background-position: 107% 82%, 95% 86%, 26% 77%, 45% 53%, 16% 70%, 100% 23%, 1% 36%;
 }
 
 .colaborador-background {
     background-image: url(../assets/images/Bushes-cidadao.png), url(../assets/images/lilies-cidadao.png), url(../assets/images/Recycle-Truck-colaborador.png), url(../assets/images/Forest-cidadao.png), url(../assets/images/Big-Bush-cidadao.png);
 
-    background-position: 26% 77%, 34% 80%, 72px 59%, 99% 23%, 1% 36%;
+    background-position: 1% 77%, 11% 80%, 100% 59%, 100% 23%, 1% 36%;
+
 }
 
 @media (max-width: 640px) {
     .media-element {
         width: 321px;
-        height: 598px;
+
+    }
+
+    .cidadao-background {
+        background-position: 26% 77%, 34% 53%, 16% 70%, 99% 23%, 1% 36%;
+    }
+
+    .colaborador-background {
+        background-position: 26% 77%, 34% 80%, 72px 59%, 99% 23%, 1% 36%;
     }
 
     .media-element h2 {
