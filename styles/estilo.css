@@ -102,7 +102,7 @@ main {
     background-color: var(--secundary);
     border-radius: 4px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
-    color: var(--alternativeColor);
+    color: var(--alternativeColor) !important;
     font-weight: 700;
     padding: 17px 58px;
     text-decoration: none;
@@ -111,7 +111,7 @@ main {
 .botao-secundary:hover {
     background-color: var(--alternativeColor);
     border: 1px var(--secundary);
-    color: var(--secundary);
+    color: var(--secundary) !important;
 }
 
 .botao-primary {
