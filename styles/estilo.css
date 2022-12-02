@@ -352,11 +352,26 @@ b {
 /* Home Page Cidadão ends*/
 
 /*Conclusao */
-.conclusaoBackground {}
+.conclusaoBackground {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 50% 40%, 0% 100%, 100% 100%;
+    background-image: url(../assets/images/desktop-Planeta.png), url(../assets/images/L-desktop-planta.png), url(../assets/images/R-desktop-planta.png);
+    background-size: auto, 45vw, 45vw;
+}
+
+.containerConclusion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .containerConclusion h2 {
     text-align: center;
+    margin-top: 498px;
+    margin-bottom: 48px;
     font-weight: 700;
+    font-size: 36px;
     color: var(--textColor);
 
 }
@@ -809,17 +824,12 @@ input:focus {
 
     /*Conclusao */
     .conclusaoBackground {
-        height: 100vh;
         background-image: url(../assets/images/planeta-Mobile.png), url(../assets/images/L-planta-mobile.png), url(../assets/images/R-planta-mobile.png);
         background-repeat: no-repeat;
         background-position: 50% 20%, 0% 100%, 100% 100%;
+        background-size: auto;
     }
 
-    .containerConclusion {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
     .containerConclusion h2 {
         margin-top: 100%;
