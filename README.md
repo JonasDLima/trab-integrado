@@ -1,4 +1,4 @@
-# Trabalho Integrado do Curso de Ciências da Computação 1 período
+# Trabalho Integrado do Curso de Ciências da Computação 1º Período
 ## Disciplinas: 
 ### Construção de Software para Web - Guilherme Zucatelli
 ### Design e Desenvolvimento de Bancos de Dados I - Abrantes Araújo
