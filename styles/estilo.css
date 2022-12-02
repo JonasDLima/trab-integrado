@@ -115,6 +115,7 @@ main {
 }
 
 .botao-primary {
+
     border-radius: 4px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
     color: var(--alternativeColor);
@@ -299,6 +300,50 @@ b {
 
 .containerButtonCidadao .botao-secundary {
     vertical-align: middle;
+}
+
+/* Cadastro Default page */
+
+.cadastro-default-Container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cadastro-default-Container h2 {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--textColor);
+
+}
+
+.timeline-cadastro {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.cadastro-default-Container label,
+.cadastro-default-Container input {
+
+    text-align: left;
+    display: block;
+
+}
+
+.nome-cadastro {
+    border: none;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+.cadastro-default-Container label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--textColor);
     font-size: 12px;
 }
 
@@ -411,6 +456,217 @@ b {
 }
 
 /* modal ends */
+.senha-cadastro {
+    border: none;
+    margin-bottom: 14px;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+
+.confirmar-senha-cadastro {
+    border: none;
+    margin-bottom: 14px;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+.cadastro-default-Container .botao-primary {
+    margin-left: 180px;
+    margin-top: 40px;
+    text-align: center;
+    border: none;
+    max-width: 350px;
+    width: 280px;
+
+}
+
+
+
+/* Cadastro default ends */
+
+
+/* Cadastro cidadao page */
+
+.cpf-cadastro-cidadao {
+    border: none;
+    margin-bottom: 14px;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+.cadastrar-como-colaborador {
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 60px;
+
+
+}
+
+
+/* Cadastro cidadao ends */
+
+
+/* Cadastro colaborador page */
+
+.razao-social-cadastro {
+    border: none;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+.cnpj-cadastro-colaborador {
+    border: none;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+.inscricao-estadual-cadastro-colaborador {
+    border: none;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+.cadastrar-como-cidadao {
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+/* Cadastro colaborador ends */
+
+
+/* Login default page */
+.login-Container {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.login-h2 {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--textColor);
+    margin-bottom: 32px;
+}
+
+.login-Container label,
+.login-Container input {
+
+    text-align: left;
+    display: block;
+
+}
+
+.nome-login {
+    border: none;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+.login-Container label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--textColor);
+    font-size: 12px;
+}
+
+
+.senha-login {
+    border: none;
+    margin-bottom: 14px;
+    width: 650px;
+    border-bottom: 1px solid var(--textColor);
+    background-color: var(--background);
+}
+
+::placeholder {
+    color: var(--textColor);
+    font-weight: 500;
+}
+
+.cadastra-se {
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 14px;
+
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.login-Container .botao-primary {
+    margin-left: 180px;
+    margin-top: 30px;
+    text-align: center;
+    border: none;
+    max-width: 350px;
+    width: 280px;
+
+}
+
+/* Login default ends */
+
+
+/* Login Cidadao page */
+
+.sou-colaborador {
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 410px;
+}
+
+.img-lixeira-login {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+/* Login Cidadao ends */
+
+
+/* Login Colaborador page */
+.sou-cidadao {
+    text-decoration: none;
+    color: var(--textColor);
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 440px;
+}
+
+.img-maquina-reciclagem {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Login Colaborador ends */
+
+
 @media (max-width: 640px) {
     .mobile-visible {
         display: block;
