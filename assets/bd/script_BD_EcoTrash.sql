@@ -1,4 +1,18 @@
 
+CREATE SEQUENCE tipos_materiais_idtipomaterial_seq;
+
+CREATE TABLE tipos_materiais (
+                idTipoMaterial INTEGER NOT NULL DEFAULT nextval('tipos_materiais_idtipomaterial_seq'),
+                dsTipoMaterial VARCHAR(20) NOT NULL,
+                CONSTRAINT idtipomaterialpk PRIMARY KEY (idTipoMaterial)
+);
+COMMENT ON TABLE tipos_materiais IS 'Tabela para armazenar os tipos de materias reciclaveis';
+COMMENT ON COLUMN tipos_materiais.idTipoMaterial IS 'Pk da tabela';
+COMMENT ON COLUMN tipos_materiais.dsTipoMaterial IS 'Nome do material';
+
+
+ALTER SEQUENCE tipos_materiais_idtipomaterial_seq OWNED BY tipos_materiais.idTipoMaterial;
+
 CREATE SEQUENCE regioes_idregiao_seq;
 
 CREATE TABLE regioes (
@@ -41,7 +55,7 @@ CREATE SEQUENCE cidades_idcidade_seq;
 
 CREATE TABLE cidades (
                 idCidade INTEGER NOT NULL DEFAULT nextval('cidades_idcidade_seq'),
-                dsCidade VARCHAR(20) NOT NULL,
+                dsCidade VARCHAR(40) NOT NULL,
                 uf CHAR(2) NOT NULL,
                 CONSTRAINT idcidadepk PRIMARY KEY (idCidade)
 );
@@ -102,56 +116,42 @@ COMMENT ON COLUMN usuarios.senha IS 'Coluna para armazenar a senha criptografada
 
 ALTER SEQUENCE usuarios_idusuario_seq OWNED BY usuarios.idUsuario;
 
-CREATE SEQUENCE organizacao_idorganizacao_seq;
+CREATE SEQUENCE organizacoes_idorganizacao_seq;
 
-CREATE TABLE organizacao (
-                idOrganizacao INTEGER NOT NULL DEFAULT nextval('organizacao_idorganizacao_seq'),
+CREATE TABLE organizacoes (
+                idOrganizacao INTEGER NOT NULL DEFAULT nextval('organizacoes_idorganizacao_seq'),
                 cnpj VARCHAR(14) NOT NULL,
                 razaoSocial VARCHAR(40) NOT NULL,
                 nomeFantasia VARCHAR(40),
-                idUsuario INTEGER NOT NULL,
+                idUsuario INTEGER,
                 CONSTRAINT idorganizacaopk PRIMARY KEY (idOrganizacao)
 );
-COMMENT ON TABLE organizacao IS 'Tabela para armazenar os dados das empresas parceiras.
+COMMENT ON TABLE organizacoes IS 'Tabela para armazenar os dados das empresas parceiras.
 Obs.: A Tabela não esta totalmente normalizada para evitar complexidade desnecessaria, foi criada a coluna de idOrganizacao para evitar a necessidade de se utilizar o cnpj como pk.';
-COMMENT ON COLUMN organizacao.idOrganizacao IS 'Pk da tabela';
-COMMENT ON COLUMN organizacao.cnpj IS 'Coluna contendo o cnpj da empresa';
-COMMENT ON COLUMN organizacao.razaoSocial IS 'Coluna contendo a razao social da empresa';
-COMMENT ON COLUMN organizacao.nomeFantasia IS 'Coluna contendo o nome fantasia da organizacao';
-COMMENT ON COLUMN organizacao.idUsuario IS 'Pk da tabela';
+COMMENT ON COLUMN organizacoes.idOrganizacao IS 'Pk da tabela';
+COMMENT ON COLUMN organizacoes.cnpj IS 'Coluna contendo o cnpj da empresa';
+COMMENT ON COLUMN organizacoes.razaoSocial IS 'Coluna contendo a razao social da empresa';
+COMMENT ON COLUMN organizacoes.nomeFantasia IS 'Coluna contendo o nome fantasia da organizacao';
+COMMENT ON COLUMN organizacoes.idUsuario IS 'Pk da tabela';
 
 
-ALTER SEQUENCE organizacao_idorganizacao_seq OWNED BY organizacao.idOrganizacao;
+ALTER SEQUENCE organizacoes_idorganizacao_seq OWNED BY organizacoes.idOrganizacao;
 
-CREATE SEQUENCE tipos_materiais_idtipomaterial_seq;
+CREATE SEQUENCE tipos_materiais_organizacao_idtipomaterialorganizacao_seq;
 
-CREATE TABLE tipos_materiais (
-                idTipoMaterial INTEGER NOT NULL DEFAULT nextval('tipos_materiais_idtipomaterial_seq'),
-                dsTipoMaterial VARCHAR(10) NOT NULL,
+CREATE TABLE tipos_materiais_organizacao (
+                idTipoMaterialOrganizacao INTEGER NOT NULL DEFAULT nextval('tipos_materiais_organizacao_idtipomaterialorganizacao_seq'),
                 idOrganizacao INTEGER NOT NULL,
-                CONSTRAINT idtiposmateriaispk PRIMARY KEY (idTipoMaterial)
-);
-COMMENT ON TABLE tipos_materiais IS 'Tabela para armazenar os tipos de materiais reciclaveis';
-COMMENT ON COLUMN tipos_materiais.idTipoMaterial IS 'Pk da tabela';
-COMMENT ON COLUMN tipos_materiais.dsTipoMaterial IS 'Coluna para armazenar o nome do material';
-COMMENT ON COLUMN tipos_materiais.idOrganizacao IS 'Pk da tabela';
-
-
-ALTER SEQUENCE tipos_materiais_idtipomaterial_seq OWNED BY tipos_materiais.idTipoMaterial;
-
-CREATE SEQUENCE itens_coleta_iditemcoleta_seq;
-
-CREATE TABLE itens_coleta (
-                idItemColeta INTEGER NOT NULL DEFAULT nextval('itens_coleta_iditemcoleta_seq'),
                 idTipoMaterial INTEGER NOT NULL,
-                CONSTRAINT iditenscoletapk PRIMARY KEY (idItemColeta)
+                CONSTRAINT idtipomateriaisorganizacaopk PRIMARY KEY (idTipoMaterialOrganizacao, idOrganizacao)
 );
-COMMENT ON TABLE itens_coleta IS 'Tabela para guardar os tipos de materiais de cada coleta';
-COMMENT ON COLUMN itens_coleta.idItemColeta IS 'Pk da tabela';
-COMMENT ON COLUMN itens_coleta.idTipoMaterial IS 'Pk da tabela';
+COMMENT ON TABLE tipos_materiais_organizacao IS 'Tabela para armazenar os tipos de materiais que a organizacao trata';
+COMMENT ON COLUMN tipos_materiais_organizacao.idTipoMaterialOrganizacao IS 'Pk da tabela';
+COMMENT ON COLUMN tipos_materiais_organizacao.idOrganizacao IS 'Pk da tabela';
+COMMENT ON COLUMN tipos_materiais_organizacao.idTipoMaterial IS 'Pk da tabela';
 
 
-ALTER SEQUENCE itens_coleta_iditemcoleta_seq OWNED BY itens_coleta.idItemColeta;
+ALTER SEQUENCE tipos_materiais_organizacao_idtipomaterialorganizacao_seq OWNED BY tipos_materiais_organizacao.idTipoMaterialOrganizacao;
 
 CREATE SEQUENCE organizacao_telefones_idorganizacaotelefone_seq;
 
@@ -175,7 +175,7 @@ CREATE TABLE organizacao_enderecos (
                 idOrganizacaoEndereco INTEGER NOT NULL DEFAULT nextval('organizacao_enderecos_idorganizacao_seq'),
                 idOrganizacao INTEGER NOT NULL,
                 numero INTEGER NOT NULL,
-                complemento VARCHAR(20),
+                complemento VARCHAR(40),
                 cep VARCHAR(8),
                 idRegiao INTEGER NOT NULL,
                 sigla CHAR(2) NOT NULL,
@@ -201,34 +201,31 @@ COMMENT ON COLUMN organizacao_enderecos.idLogradouro IS 'Pk da tabela';
 
 ALTER SEQUENCE organizacao_enderecos_idorganizacao_seq OWNED BY organizacao_enderecos.idOrganizacaoEndereco;
 
-CREATE SEQUENCE cidadao_idcidadao_seq;
+CREATE SEQUENCE cidadaos_idcidadao_seq;
 
-CREATE TABLE cidadao (
-                idCidadao INTEGER NOT NULL DEFAULT nextval('cidadao_idcidadao_seq'),
+CREATE TABLE cidadaos (
+                idCidadao INTEGER NOT NULL DEFAULT nextval('cidadaos_idcidadao_seq'),
                 cpf VARCHAR(11) NOT NULL,
                 nome VARCHAR(80) NOT NULL,
                 email VARCHAR(30),
-                idUsuario INTEGER NOT NULL,
+                idUsuario INTEGER,
                 CONSTRAINT idcidadaopk PRIMARY KEY (idCidadao)
 );
-COMMENT ON TABLE cidadao IS 'Tabela de dados dos cidadãos.Obs.: A tabela não esta totalmente normalizada para evitar complexidade desnecessaria de separar o nome e sobrenome do cliente, bem como a inclusão de idOrganizacao para evitar a complexidade de utilizar o cpf como chave primaria.';
-COMMENT ON COLUMN cidadao.idCidadao IS 'Chave primaria da tabela';
-COMMENT ON COLUMN cidadao.cpf IS 'Coluna para guardar o cpf do cliente sem formatacao';
-COMMENT ON COLUMN cidadao.nome IS 'Coluna para guardar o nome completo do cliente';
-COMMENT ON COLUMN cidadao.email IS 'Coluna para armazenar o email';
-COMMENT ON COLUMN cidadao.idUsuario IS 'Pk da tabela';
+COMMENT ON TABLE cidadaos IS 'Tabela de dados dos cidadãos.Obs.: A tabela não esta totalmente normalizada para evitar complexidade desnecessaria de separar o nome e sobrenome do cliente, bem como a inclusão de idOrganizacao para evitar a complexidade de utilizar o cpf como chave primaria.';
+COMMENT ON COLUMN cidadaos.idCidadao IS 'Chave primaria da tabela';
+COMMENT ON COLUMN cidadaos.cpf IS 'Coluna para guardar o cpf do cliente sem formatacao';
+COMMENT ON COLUMN cidadaos.nome IS 'Coluna para guardar o nome completo do cliente';
+COMMENT ON COLUMN cidadaos.email IS 'Coluna para armazenar o email';
+COMMENT ON COLUMN cidadaos.idUsuario IS 'Pk da tabela';
 
 
-ALTER SEQUENCE cidadao_idcidadao_seq OWNED BY cidadao.idCidadao;
-
-CREATE SEQUENCE coletas_idcoleta_seq;
+ALTER SEQUENCE cidadaos_idcidadao_seq OWNED BY cidadaos.idCidadao;
 
 CREATE TABLE coletas (
-                idColeta INTEGER NOT NULL DEFAULT nextval('coletas_idcoleta_seq'),
+                idColeta INTEGER NOT NULL,
                 data DATE NOT NULL,
                 idCidadao INTEGER NOT NULL,
                 idOrganizacao INTEGER NOT NULL,
-                idItemColeta INTEGER NOT NULL,
                 CONSTRAINT idcoletaspk PRIMARY KEY (idColeta)
 );
 COMMENT ON TABLE coletas IS 'Tabela para armazenar os dados relativos a cada coleta realizada';
@@ -236,10 +233,17 @@ COMMENT ON COLUMN coletas.idColeta IS 'Pk da tabela';
 COMMENT ON COLUMN coletas.data IS 'Coluna para armazenar a data da coleta';
 COMMENT ON COLUMN coletas.idCidadao IS 'Chave primaria da tabela';
 COMMENT ON COLUMN coletas.idOrganizacao IS 'Pk da tabela';
-COMMENT ON COLUMN coletas.idItemColeta IS 'Pk da tabela';
 
 
-ALTER SEQUENCE coletas_idcoleta_seq OWNED BY coletas.idColeta;
+CREATE TABLE itens_coleta (
+                idTipoMaterial INTEGER NOT NULL,
+                idColeta INTEGER NOT NULL,
+                CONSTRAINT iditenscoletapk PRIMARY KEY (idTipoMaterial, idColeta)
+);
+COMMENT ON TABLE itens_coleta IS 'Tabela para guardar os tipos de materiais de cada coleta';
+COMMENT ON COLUMN itens_coleta.idTipoMaterial IS 'Pk da tabela';
+COMMENT ON COLUMN itens_coleta.idColeta IS 'Pk da tabela';
+
 
 CREATE SEQUENCE cidadao_telefones_idcidadaotelefone_seq;
 
@@ -263,11 +267,11 @@ CREATE TABLE cidadao_enderecos (
                 idCidadaoEndereco INTEGER NOT NULL DEFAULT nextval('cidadao_enderecos_idcidadaoendereco_seq'),
                 idCidadao INTEGER NOT NULL,
                 numero INTEGER NOT NULL,
-                complemento VARCHAR(20),
+                complemento VARCHAR(40),
                 cep VARCHAR(8),
                 idRegiao INTEGER DEFAULT 1 NOT NULL,
-                sigla CHAR(2) DEFAULT BR NOT NULL,
-                uf CHAR(2) DEFAULT ES NOT NULL,
+                sigla CHAR(2) DEFAULT 'BR' NOT NULL,
+                uf CHAR(2) DEFAULT 'ES' NOT NULL,
                 idCidade INTEGER DEFAULT 1 NOT NULL,
                 idBairro INTEGER NOT NULL,
                 idLogradouro INTEGER NOT NULL,
@@ -288,6 +292,138 @@ COMMENT ON COLUMN cidadao_enderecos.idLogradouro IS 'Pk da tabela';
 
 
 ALTER SEQUENCE cidadao_enderecos_idcidadaoendereco_seq OWNED BY cidadao_enderecos.idCidadaoEndereco;
+
+-- Cadastro dos dados das tabelas basicas ou dados base
+
+INSERT INTO regioes (idRegiao, dsRegiao) VALUES (1, 'América do Sul');
+INSERT INTO regioes (idRegiao, dsRegiao) VALUES (2, 'América do Norte');
+INSERT INTO regioes (idRegiao, dsRegiao) VALUES (3, 'América Central');
+
+INSERT INTO paises (sigla, dsPais, idRegiao) VALUES ('BR', 'Brasil', 1);
+INSERT INTO paises (sigla, dsPais, idRegiao) VALUES ('US', 'Estados Unidos', 2);
+INSERT INTO paises (sigla, dsPais, idRegiao) VALUES ('DO', 'República Dominicana', 3);
+
+INSERT INTO unidades_federativas (uf, dsUnidadeFederativa, sigla) VALUES ('ES', 'Espirito Santo', 'BR');
+INSERT INTO unidades_federativas (uf, dsUnidadeFederativa, sigla) VALUES ('DC', 'Washington', 'US');
+INSERT INTO unidades_federativas (uf, dsUnidadeFederativa, sigla) VALUES ('SD', 'São Domingos', 'DO');
+
+INSERT INTO cidades (idCidade, dsCidade, uf) VALUES (1, 'Vila Velha', 'ES');
+INSERT INTO cidades (idCidade, dsCidade, uf) VALUES (2, 'Walla Walla', 'DC');
+INSERT INTO cidades (idCidade, dsCidade, uf) VALUES (3, 'San Antonio de Guerra', 'SD');
+
+INSERT INTO bairros (idBairro, dsBairro, idCidade) VALUES (1, 'Boa Vista', 1);
+INSERT INTO bairros (idBairro, dsBairro, idCidade) VALUES (2, 'Capitol Hill', 2);
+INSERT INTO bairros (idBairro, dsBairro, idCidade) VALUES (3, 'Hato Viejo', 3);
+
+INSERT INTO logradouros (idLogradouro, dsLogradouro, idBairro) VALUES (
+    1, 'Av. Comissário José Dantas de Melo', 1
+);
+
+INSERT INTO logradouros (idLogradouro, dsLogradouro, idBairro) VALUES (
+    2, '615 Independence Ave SE', 2
+);
+
+INSERT INTO logradouros (idLogradouro, dsLogradouro, idBairro) VALUES (
+    3, 'Carr. Sierra Prieta, 92000', 3
+);
+
+INSERT INTO logradouros (idLogradouro, dsLogradouro, idBairro) VALUES (
+    4, 'Rua Girassol', 1
+);
+
+INSERT INTO tipos_materiais (idTipoMaterial, dsTipoMaterial) VALUES (
+    1, 'Plastico'
+);
+
+INSERT INTO tipos_materiais (idTipoMaterial, dsTipoMaterial) VALUES (
+    2, 'Metal'
+);
+
+INSERT INTO tipos_materiais (idTipoMaterial, dsTipoMaterial) VALUES (
+    3, 'Papel'
+);
+
+INSERT INTO tipos_materiais_organizacao (idTipoMaterialOrganizacao, idOrganizacao, idTipoMaterial) VALUES (
+    1, 1, 1
+);
+
+INSERT INTO tipos_materiais_organizacao (idTipoMaterialOrganizacao, idOrganizacao, idTipoMaterial) VALUES (
+    2, 1, 2
+);
+
+INSERT INTO tipos_materiais_organizacao (idTipoMaterialOrganizacao, idOrganizacao, idTipoMaterial) VALUES (
+    3, 1, 3
+);
+
+-- Fim dos dados basicos
+
+-- Cadastro de cidadaos/Organizacoes
+
+INSERT INTO cidadaos (idCidadao, cpf, nome, email) VALUES (
+    1, '12345678998', 'Juquinha da Silva Cunha', 'mrCunha@gmail.com'
+);
+
+INSERT INTO cidadao_telefones (idCidadaoTelefone, idCidadao, telefone) VALUES (
+    1, 1, '27994667801'
+);
+
+INSERT INTO cidadao_enderecos (
+    idCidadaoEndereco, idCidadao, numero, complemento, cep, idRegiao,
+    idCidade, idBairro, idLogradouro)
+VALUES (
+    1, 1, 21, 'Em frente ao shopping vv', '29032586', 1, 1, 1, 1
+);
+
+INSERT INTO organizacoes (idOrganizacao, cnpj, razaoSocial, nomeFantasia) VALUES (
+    1, '12345678998765', 'Recicla Plus LTDA', 'Recicla+'
+);
+
+INSERT INTO organizacao_telefones (idOrganizacaoTelefone, idOrganizacao, telefone) VALUES (
+    1, 1, '2732336895'
+);
+
+INSERT INTO organizacao_enderecos (
+    idOrganizacaoEndereco, idOrganizacao, numero, complemento, cep, idRegiao, sigla, uf,
+    idCidade, idBairro, idLogradouro)
+VALUES (
+    1, 1, 380, 'Proximo ao cerimonial', '29032861', 1, 'BR', 'ES', 1, 1, 4
+);
+
+-- Finalizacao de cadastros dos cidadaos/organizacoes
+
+-- Cadastro de coletas
+
+INSERT INTO coletas (idColeta, data, idCidadao, idOrganizacao) VALUES (
+    1, '02-12-2022 00:25', 1, 1
+);
+
+INSERT INTO itens_coleta (idColeta, idTipoMaterial) VALUES (
+    1, 1
+);
+
+INSERT INTO itens_coleta (idColeta, idTipoMaterial) VALUES (
+    1, 2
+);
+
+INSERT INTO itens_coleta (idColeta, idTipoMaterial) VALUES (
+    1, 3
+);
+
+-- Finalizacao do cadastro de coletas
+
+ALTER TABLE tipos_materiais_organizacao ADD CONSTRAINT tipos_materiais_tipos_materiais_organizacao_fk
+FOREIGN KEY (idTipoMaterial)
+REFERENCES tipos_materiais (idTipoMaterial)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE itens_coleta ADD CONSTRAINT tipos_materiais_itens_coleta_fk
+FOREIGN KEY (idTipoMaterial)
+REFERENCES tipos_materiais (idTipoMaterial)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
 
 ALTER TABLE paises ADD CONSTRAINT regioes_paises_fk
 FOREIGN KEY (idRegiao)
@@ -408,14 +544,14 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE cidadao ADD CONSTRAINT usuarios_cidadao_fk
+ALTER TABLE cidadaos ADD CONSTRAINT usuarios_cidadao_fk
 FOREIGN KEY (idUsuario)
 REFERENCES usuarios (idUsuario)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE organizacao ADD CONSTRAINT usuarios_organizacao_fk
+ALTER TABLE organizacoes ADD CONSTRAINT usuarios_organizacao_fk
 FOREIGN KEY (idUsuario)
 REFERENCES usuarios (idUsuario)
 ON DELETE NO ACTION
@@ -424,63 +560,56 @@ NOT DEFERRABLE;
 
 ALTER TABLE organizacao_enderecos ADD CONSTRAINT organizacao_organizacao_enderecos_fk
 FOREIGN KEY (idOrganizacao)
-REFERENCES organizacao (idOrganizacao)
+REFERENCES organizacoes (idOrganizacao)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE organizacao_telefones ADD CONSTRAINT organizacao_organizacao_telefones_fk
 FOREIGN KEY (idOrganizacao)
-REFERENCES organizacao (idOrganizacao)
+REFERENCES organizacoes (idOrganizacao)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
-ALTER TABLE tipos_materiais ADD CONSTRAINT organizacao_tipos_materiais_fk
+ALTER TABLE tipos_materiais_organizacao ADD CONSTRAINT organizacao_tipos_materiais_fk
 FOREIGN KEY (idOrganizacao)
-REFERENCES organizacao (idOrganizacao)
+REFERENCES organizacoes (idOrganizacao)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE coletas ADD CONSTRAINT organizacao_coletas_fk
 FOREIGN KEY (idOrganizacao)
-REFERENCES organizacao (idOrganizacao)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
-
-ALTER TABLE itens_coleta ADD CONSTRAINT tipos_materiais_itens_coleta_fk
-FOREIGN KEY (idTipoMaterial)
-REFERENCES tipos_materiais (idTipoMaterial)
-ON DELETE NO ACTION
-ON UPDATE NO ACTION
-NOT DEFERRABLE;
-
-ALTER TABLE coletas ADD CONSTRAINT itens_coleta_coletas_fk
-FOREIGN KEY (idItemColeta)
-REFERENCES itens_coleta (idItemColeta)
+REFERENCES organizacoes (idOrganizacao)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE cidadao_enderecos ADD CONSTRAINT cidadao_cidadao_enderecos_fk
 FOREIGN KEY (idCidadao)
-REFERENCES cidadao (idCidadao)
+REFERENCES cidadaos (idCidadao)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE cidadao_telefones ADD CONSTRAINT cidadao_cidadao_telefones_fk
 FOREIGN KEY (idCidadao)
-REFERENCES cidadao (idCidadao)
+REFERENCES cidadaos (idCidadao)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE coletas ADD CONSTRAINT cidadao_coletas_fk
 FOREIGN KEY (idCidadao)
-REFERENCES cidadao (idCidadao)
+REFERENCES cidadaos (idCidadao)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE itens_coleta ADD CONSTRAINT coletas_itens_coleta_fk
+FOREIGN KEY (idColeta)
+REFERENCES coletas (idColeta)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
