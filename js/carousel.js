@@ -6,47 +6,29 @@ var currentFilm = 1;
 
 function selecionado() {
   var img;
-  var fundo;
-  var subt;
-  var desc;
-  for (var idx = 1; idx <= 3; idx++) {
+  for (var idx = 1; idx <= 10; idx++) {
     img = document.getElementById("img" + idx);
-    fundo = document.getElementById("bl" + idx);
-    subt = document.getElementById("subtitulo" + idx);
-    // desc = document.getElementById("description" + idx);
     
+    img.style.display = 'none';
 
-    fundo.style.background = isCheck;
-    img.style.opacity = 0;
-    subt.style.opacity = 0;
-    // desc.style.opacity = 0;
   }
 }
 
 function setImg(idx) {
   selecionado();
 
-  var bl = document.getElementById("bl" + idx);
   var filme = document.getElementById("img" + idx);
-  var subt = document.getElementById("subtitulo" + idx);
-  // var desc = document.getElementById("description" + idx);
 
-  bl.style.background = "#000";
-  filme.style.opacity = 1;
-  subt.style.opacity = 1;
-  // desc.style.opacity = 1;
+
+  filme.style.display = 'block';
+
   currentFilm = idx;
 }
 
 setImg(currentFilm);
 
 document.addEventListener("click", function(event){
-    event.preventDefault();
-  
-    if(event.target.id.indexOf("bl") != -1 ){
-      var idx = event.target.id.split("bl")[1];
-      setImg(idx);
-    }
+   
 
     if(event.target.className.split("_")[0] == "arrow"){
       var idx = event.target.className.split("arrow_")[1];
@@ -56,7 +38,7 @@ document.addEventListener("click", function(event){
         setImg(currentFilm);
       }
   
-      if(idx == "esquerda" && currentFilm != 3){
+      if(idx == "esquerda" && currentFilm != 10){
         currentFilm++;
         setImg(currentFilm);
       }

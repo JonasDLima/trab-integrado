@@ -15,7 +15,6 @@
   <!-- Fonte ends-->
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/estilo.css">
-  <link rel="stylesheet" href="styles/carouselJS.css">
 
   <title>Eco Trash</title>
 </head>
@@ -113,21 +112,32 @@
   <section class="boxContainer-About">
     <h3>Formas de Coletar o Lixo</h3>
 
-    <div style="width: calc(100% - 20px);">
-      <div class="div_imagens">
-        <img id="img1" class="img" src="adao_negro.jpg" alt="aqui tem uma imagem">
-        <img id="img2" class="img" src="miranha.jpg" alt="aqui tem uma imagem">
-        <img id="img3" class="img" src="vingadores.jpeg" alt="aqui tem uma imagem">
-        <img class="arrow_direita" src="./assets/images/navegate_back.png" alt="aqui tem uma imagem" click="clicou">
-        <img class="arrow_esquerda" src="./assets/images/navegate_enter.png" alt="aqui tem uma imagem" click="clicou">
+    <div style="width: calc(100% - 20px); position: relative;">
+
+      <div class="div_imagens" style="display: flex; justify-content: space-between; align-items: center;">
+
+        <img id="img1" class="img" src="./assets/images/comum.svg" alt="aqui tem uma imagem">
+        <img id="img2" class="img" src="./assets/images/organico.svg" alt="aqui tem uma imagem">
+        <img id="img3" class="img" src="./assets/images/lixo_papel.svg" alt="aqui tem uma imagem">
+        <img id="img4" class="img" src="./assets/images/tiozin-vidro.jpg" alt="aqui tem uma imagem">
+        <img id="img5" class="img" src="./assets/images/joga-Pelo-Carro.png" alt="aqui tem uma imagem">
+        <img id="img6" class="img" src="./assets/images/cartoon-lixo-na-rua.png" alt="aqui tem uma imagem">
+        <img id="img7" class="img" src="./assets/images/duas-crianças-felizes-por-jogar-lix-no-lixo.png"
+          alt="aqui tem uma imagem">
+        <img id="img8" class="img" src="./assets/images/tiozin-cigarro.png" alt="aqui tem uma imagem">
+        <img id="img9" class="img" src="./assets/images/jogar-na-mare-n-pode.png" alt="aqui tem uma imagem">
+        <img id="img10" class="img" src="./assets/images/cartoon-fofo-jogando-lixo-no-lixo.png"
+          alt="aqui tem uma imagem">
+
       </div>
+      <img class="arrow_direita" src="./assets/images/navegate_back.png" alt="aqui tem uma imagem" click="clicou">
+      <img class="arrow_esquerda" src="./assets/images/navegate_enter.png" alt="aqui tem uma imagem" click="clicou">
+
+
     </div>
 
   </section>
-
-
-
-  <script src="/js/carousel.js"></script>
 </body>
+<script src="./js/carousel.js"></script>
 
 </html>
